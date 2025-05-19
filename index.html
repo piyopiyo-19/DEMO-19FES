@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MNTKFES！</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    [data-aos] {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    [data-aos].aos-animate {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="bg_pattern Paper_v2"></div>
+
+  <!-- ✅ ヘッダー -->
+  <header class="site-header">
+    <a href="index.html" class="site-logo">
+      <img src="images/logo.png" alt="MNTKFES！ロゴ">
+    </a>
+  </header>
+
+      <div class="toggle_btn" id="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+
+  <!-- ✅ メニュー -->
+  <nav>
+    <div class="inner">
+      <ul>
+        <li><a href="#top">ホーム</a></li>
+        <li><a href="howto.html">参加について</a></li>
+        <li><a href="#news">お知らせ</a></li>
+        <li><a href="#gallery">ギャラリー</a></li>
+        <li><a href="#contact">お問い合わせ</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ✅ マスク -->
+  <div id="mask"></div>
+
+
+
+ 
+
+  <!-- ✅ コンテンツ -->
+<section class="section" id="top" data-aos>
+
+<!-- TOP画像 -->
+<div class="top-image-wrapper" data-aos>
+  <img src="images/s-main1.png" alt="TOP画像" class="top-image-bg">
+
+  <!-- main2画像（右寄せ） -->
+<a href="index.html" class="top-main2 animate-main2">
+  <img src="images/s-main2.png" alt="メイン2画像">
+</a>
+
+<!-- ロゴ画像 -->
+<a href="index.html" class="top-logo animate-logo">
+  <img src="images/logo4.png" alt="ロゴ">
+</a>
+
+</div>
+
+
+</section>
+
+   <div class="container-tx2" data-aos>
+    <h1>MNTKFES！</h1>
+    <p>2026年1月9日開催　井吹宗正×神童拓人</p>
+    <p>非公式WEBオンリーイベント特設サイトです。</p>
+
+    
+  </div>
+
+<div class="container-tx-scr">
+  <section class="section" id="news" data-aos>
+  <div class="container-tx">
+    <h2>お知らせ・更新履歴</h2>
+    <div class="scroller">
+    <p>2025/05/19 - ホームページ仮公開</p>
+    <p>2025/05/19 - イベント概要を更新しました</p>
+    <p>2025/05/19 - トップページを更新しました</p>
+    </div>
+  </div>
+  </section>
+
+
+
+
+  <section class="section" id="about" data-aos>
+  <div class="container-tx">
+    <h2>参加について</h2>
+    <p><a href="howto.html" class="button-gradation">参加方法の詳細はこちら</a></p>
+
+  </div>
+  </section>
+
+
+
+  <section class="section" id="entry" data-aos>
+  <div class="container-tx">
+    <h2>サークル参加</h2>
+    <p>pictSPACE様内特設ページより参加登録ください。</p>
+    <p><a href="https://pictsquare.net/axvht1etg1dwyb2hnh5zkpm2yufvrvjf" target="_blank" rel="noopener" class="button-gradation">pictSPACE 申込ページへ</a></p>
+  </div>
+  </section>
+
+
+
+  <section class="section" id="gallery" data-aos>
+  <div class="container-tx">
+  <h2>イベント企画</h2>
+  <p>COMING SOON</p>
+  </div>
+  </section>
+
+    <section class="section" id="gallery" data-aos>
+  <div class="container-tx">
+  <h2>ギャラリー</h2>
+  <p>COMING SOON</p>
+  </div>
+  </section>
+
+  <section class="section" id="downloads" data-aos>
+  <div class="container-tx">
+    <h2>ダウンロード素材</h2>
+    <p>専用アバター、ロゴ素材などがDLできます</p>
+    <p><a href="howto-----.html" class="button-gradation">ダウンロードはこちら</a></p>
+  </div>
+  </section>
+
+  <section class="section" id="contact" data-aos>
+  <div class="container-tx">
+    <h2>お問い合わせ</h2>
+    <p><a href="howto--.html" class="button-gradation">お問い合わせ</a></p>
+  </div>
+  </section>
+
+  <script>
+    // スクロール演出
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('aos-animate');
+        }
+      });
+    });
+    document.querySelectorAll('[data-aos]').forEach(el => observer.observe(el));
+
+    // タブ切替
+    function showTab(tab) {
+      document.getElementById('circle').style.display = tab === 'circle' ? 'block' : 'none';
+      document.getElementById('general').style.display = tab === 'general' ? 'block' : 'none';
+    }
+
+    // ハンバーガーメニュー開閉
+      const toggle = document.getElementById('menu-toggle');
+      const body = document.body;
+      const mask = document.getElementById('mask');
+
+      toggle.addEventListener('click', () => {
+      body.classList.toggle('open');
+      });
+
+      mask.addEventListener('click', () => {
+      body.classList.remove('open');
+      });
+
+    // ロゴを遅れて表示
+  window.addEventListener('load', () => {
+    const logo = document.querySelector('.top-logo');
+    setTimeout(() => {
+      logo.classList.add('visible');
+  }, 15); // 秒後に表示
+});
+
+    // メイン2を遅れて表示
+  window.addEventListener('load', () => {
+    const main2 = document.querySelector('.top-main2');
+    setTimeout(() => {
+      main2.classList.add('visible');
+  }, 0.2); // 秒後に表示
+});
+
+
+  </script>
+</body>
+</html>

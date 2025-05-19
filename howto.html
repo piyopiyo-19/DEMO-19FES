@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>参加方法 - MNTKFES！</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .fade-up {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .fade-up.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .section {
+      padding: 80px 20px;
+      border-top: 1px solid #ddd;
+    }
+    .section:nth-of-type(odd) {
+      background-color: rgba(224, 224, 247, 0.178); /*=====奇数sec色===*/
+
+    }
+    .section:nth-of-type(even) {
+  background-color: 
+}
+  </style>
+</head>
+
+
+<body>
+  <div class="bg_pattern Paper_v2"></div>
+
+
+  <!-- ✅ ヘッダー -->
+  <header class="site-header">
+    <a href="index.html" class="site-logo">
+      <img src="images/logo.png" alt="MNTKFES！ロゴ">
+    </a>
+  </header>
+
+
+      <div class="toggle_btn" id="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+  <!-- ✅ メニュー -->
+  <nav>
+    <div class="inner">
+      <ul>
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="#about">参加について</a></li>
+        <li><a href="#news">お知らせ</a></li>
+        <li><a href="#gallery">ギャラリー</a></li>
+        <li><a href="#contact">お問い合わせ</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ✅ マスク -->
+  <div id="mask"></div>
+
+
+
+    <!-- 本文 -->
+  <main>
+    
+    <section class="section" id="page-title" data-aos>
+      <div class="container center-text">
+        <h1 class="page-title">参加について</h1>
+        <p>MNTKFES！に参加したい方へのご案内ページです。</p>
+      </div>
+    </section>
+
+    <section class="section" id="event-overview" data-aos>
+      <div class="container center-text2">
+        <h2 class="subtitle-text2">   WEBオンリーとは？</h2>
+        <p>WEBオンリーとはインターネット上で開催されるオンライン同人即売会です。</p>
+        <p>pictSQUAREのWEBオンリーではサークル専用ブースが作れたり、参加者同士でメッセージを送り合ったり、まるでリアルイベントのような交流を行うことができます。</p>
+        <p><h5>・既刊だけでもOK！</h5></p>
+        <p><h5>・pixivやTwitterに上げた作品の展示だけの参加もOK！</h5></p>
+      </div>
+    </section>
+
+
+    <section class="section" id="schedule" data-aos>
+      <div class="container">
+        <h2 class="subtitle-text2">開催情報</h2>
+        <p><strong>開催日時：</strong>2026年1月9日（金）22:00 ～ 2026年1月10日（土）21:50</p>
+        <p><strong>サークル申込期間：</strong>2025年5月10日（日）～ 12月9日（火）</p>
+        <p><strong>募集数：</strong>24sp（状況により変動する可能性あり）</p>
+        <p><strong>参加費：</strong>一般参加：無料 ／ サークル参加：550円（pictSQUARE利用料）</p>
+      </div>
+    </section>
+
+
+    <section class="section" id="participation" data-aos>
+      <div class="container">
+        <h2 class="subtitle-text2">参加方法</h2>
+      <div class="tab-wrapper">
+      
+        <div class="tab-buttons">
+          <button class="active" onclick="showTab('circle')">サークル参加</button>
+          <button onclick="showTab('general')">一般参加</button>
+        </div>
+
+        <div class="tab-content" id="circle" style="display: block;">
+          <p>サークル参加に関するガイドや規約を掲載予定です。</p>
+          <div class="image-wrapper fade-up show" id="circle-image">
+            <p><img src="images/s-hutu-1.png" alt="サ説明1"></p>
+            <p><img src="images/s-hutu-2.png" alt="サ説明2"></p>
+            <p><img src="images/s-hutu-3.png" alt="サ説明3"></p>
+            <p><img src="images/s-hutu-4.png" alt="サ説明4"></p>
+          </div>
+        </div>
+     
+
+        <div class="tab-content" id="general" style="display: none;">
+          <p>一般参加者様向けの閲覧ガイドを掲載予定です。</p>
+          <div class="image-wrapper fade-up" id="general-image">
+            <p><img src="images/i-hutu-1.png" alt="一般説明1"></p>
+            <p><img src="images/i-hutu-2.png" alt="一般説明2"></p>
+            <p><img src="images/i-hutu-3.png" alt="一般説明3"></p>
+            <p><img src="images/i-hutu-4.png" alt="一般説明4"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    </section>
+
+    <section class="section" id="notices" data-aos>
+      <div class="container">
+        <h2 class="subtitle-text2">注意事項・禁止事項</h2>
+        <h3>⚠ 注意事項</h3>
+        <ul>
+          <li>注意事項を掲載予定です。</li>
+          <li>注意事項を掲載予定です。</li>
+          <li>注意事項を掲載予定です。</li>
+        </ul>
+        <h3>🚫 禁止事項</h3>
+        <ul>
+          <li>禁止事項を掲載予定です。</li>
+          <li>禁止事項を掲載予定です。</li>
+          <li>禁止事項を掲載予定です。</li>
+        </ul>
+      </div>
+    </section>
+  </main> 
+
+
+  <script>
+    function fadeImage(imageEl) {
+      if (!imageEl) return;
+      imageEl.classList.remove('show');
+      void imageEl.offsetWidth;
+      setTimeout(() => {
+        imageEl.classList.add('show');
+      }, 10);
+    }
+
+    function showTab(tab) {
+      const circle = document.getElementById('circle');
+      const general = document.getElementById('general');
+      const circleImage = document.getElementById('circle-image');
+      const generalImage = document.getElementById('general-image');
+
+      if (tab === 'circle') {
+        circle.style.display = 'block';
+        general.style.display = 'none';
+        fadeImage(circleImage);
+      } else {
+        general.style.display = 'block';
+        circle.style.display = 'none';
+        fadeImage(generalImage);
+      }
+
+      document.querySelectorAll(".tab-buttons button").forEach(btn => {
+      btn.classList.remove("active");
+      });
+      event.target.classList.add("active");
+
+      // ✅ activeクラス切り替え
+      document.querySelectorAll(".tab-buttons button").forEach(btn => {
+      btn.classList.remove("active");
+      });
+      const clicked = (tab === 'circle') ? document.querySelector('.tab-buttons button:nth-child(1)')
+      : document.querySelector('.tab-buttons button:nth-child(2)');
+      clicked.classList.add("active");
+
+    }
+
+    // スクロール演出
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('aos-animate');
+        }
+      });
+    });
+    document.querySelectorAll('[data-aos]').forEach(el => observer.observe(el));
+
+    window.addEventListener('load', () => {
+      fadeImage(document.getElementById('circle-image'));
+    });
+
+    const toggle = document.getElementById("menu-toggle");
+    const body = document.body;
+    const mask = document.getElementById("mask");
+
+    toggle.addEventListener("click", () => {
+      body.classList.toggle("open");
+    });
+    mask.addEventListener("click", () => {
+      body.classList.remove("open");
+    });
+  </script>
+</body>
+</html>
