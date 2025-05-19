@@ -779,7 +779,7 @@ nav .inner ul li a:hover {
     /* ▼ 中央寄せの幅調整（スマホ用） */
   .container,
   .tab-wrapper {
-    padding: 0 0px;
+    padding: 0 10px;
     max-width: 100%;
     width: 100%;
     box-sizing: border-box;
