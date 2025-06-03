@@ -505,6 +505,7 @@ textarea {
 textarea::placeholder {
   color: #b2b8ee;
   font-size: 1.1rem;
+  line-height: 1.4;
 }
 
 
