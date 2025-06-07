@@ -1,0 +1,613 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800;900&family=DotGothic16&display=swap');
+
+
+/* 共通のcss */
+
+/* =============
+背景パターン 設定
+============= */
+.bg_pattern {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #4869ff;
+  z-index:-2; /* base layer for the page background */
+}
+.Paper_v2 {
+  background-image:
+    repeating-linear-gradient(to bottom,
+      transparent 25px,
+      rgba(0, 0, 0, 0.04) 26px,  rgba(0, 0, 0, 0.04) 26px,
+      transparent 27px,  transparent 51px,
+      rgba(0, 0, 0, 0.04) 52px,  rgba(0, 0, 0, 0.04) 52px,
+      transparent 53px,  transparent 77px,
+      rgba(0, 0, 0, 0.04) 78px,  rgba(0, 0, 0, 0.04) 78px,
+      transparent 79px,  transparent 103px,
+      rgba(0, 0, 0, 0.04) 104px,  rgba(0, 0, 0, 0.04) 104px,
+      transparent 105px,  transparent 129px,
+      rgba(0, 0, 0, 0.04) 130px,  rgba(0, 0, 0, 0.04) 130px),
+
+    repeating-linear-gradient(to right,
+      transparent 25px,
+      rgba(0, 0, 0, 0.04) 26px,  rgba(0, 0, 0, 0.04) 26px,
+      transparent 27px,  transparent 51px,
+      rgba(0, 0, 0, 0.04) 52px,  rgba(0, 0, 0, 0.04) 52px,
+      transparent 53px,  transparent 77px,
+      rgba(0, 0, 0, 0.04) 78px,  rgba(0, 0, 0, 0.04) 78px,
+      transparent 79px,  transparent 103px,
+      rgba(0, 0, 0, 0.04) 104px,  rgba(0, 0, 0, 0.04) 104px,
+      transparent 105px,  transparent 129px,
+      rgba(0, 0, 0, 0.04) 130px,  rgba(0, 0, 0, 0.04) 130px);
+}
+
+
+
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+body {
+  letter-spacing: .025em;
+  line-height: 1.8;
+  color: #434472;
+  font-weight: 520; /* 共通のフォント */
+}
+body {
+  font-family:
+    "Noto Sans JP",
+    "Zen Maru Gothic",            /* Google Fonts かわいい丸ゴ */
+    "Hiragino Kaku Gothic ProN",
+    "ヒラギノ角ゴ ProN",
+    "Meiryo",
+    sans-serif;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+.section {
+  padding: 50px 20px 
+}
+
+#top.section {
+  padding-top: 10px;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+.site-footer,
+.footer-mobile {
+  margin-top: auto; /* ← 念のためつけておくと安全 */
+}
+
+
+@media (min-width: 769px) {
+  body {
+    font-size: 20px;     /* 通常より少し大きめ */
+    font-weight: 600;    /* 少し太め（デフォルトより強調） */
+  }
+
+  p, li {
+    font-size: 1.2rem;  /* 通常段落やリストも少し大きく */
+    font-weight: 600;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+}
+
+
+/* --------見出し制御---------*/
+h1 {
+  font-size: 2rem;
+}
+h2 {
+  font-size: 1.75rem;
+}
+h3 {
+  font-size: 1rem;
+}
+h4 {
+  font-size: 0.8rem;
+}
+h5 {
+  font-size: 0.75rem;
+}
+h6 {
+  font-size: 0.875rem;
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  .section {
+    padding: 60px 15px;
+  }
+
+
+  h1 {
+  font-size: 1.6rem;
+  }
+  h2 {
+  font-size: 1.5rem;
+  }
+  h3 {
+  font-size: 0.95rem;
+  }
+  h4 {
+  font-size: 0.8rem;
+  }
+  h5 {
+  font-size: 0.75rem;
+  }
+  h6 {
+  font-size: 0.65rem;
+  }
+
+}
+
+
+
+
+
+
+/* page specific styles for song forms */
+
+    .fade-up {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .fade-up.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .section {
+      padding: 15px 20px 15px 20px;
+    }
+    @media (max-width: 768px) {
+  .section {
+   padding: 5px 20px 5px 20px;
+  }
+   }
+
+/* 入力テキストボックス*/
+textarea {
+  min-height: 180px;  /* テキストボックス高さ */
+  resize: vertical;   /* ユーザーが縦にリサイズできる*/
+}
+
+textarea::placeholder {
+  color: #b2b8ee;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+
+/* 白いボックス*/
+.forms-white-box {
+  width: 100vw;
+  max-width: none;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  box-sizing: border-box;
+  position: relative;
+  background-color: #ffffff;
+
+  border-left: none;
+  border-right: none;
+  padding: 2.5em 1em 1.8em 1em;
+  margin-bottom: 1em;
+}
+
+/* 上部に配置するイントロ画像 */
+.forms-white-box .forms-intro-img {
+  position: absolute;
+  top: -5.5em;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 1000px;
+  height: auto;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .forms-white-box {
+    padding: 1.7em 1em 1em 1em;
+
+  }
+  .forms-white-box .forms-intro-img {
+    top: -4em;
+    width: 100%;
+  }
+}
+
+
+
+/* 入力フォーム 青枠 */
+.formsbox {
+  background-color: #ffffff;
+  border: 3px solid rgb(81 109 235); 
+  border-radius: 20px;
+  padding: 2.5em 3em;
+  max-width: 700px;
+  margin: 0 auto;
+  margin-top: 0.6em;
+  box-sizing: border-box;
+  position: relative;
+  font-size: 1em;
+
+    /* ▼ アニメっぽい右下シャドウ追加 */
+  box-shadow: 1rem 1rem 0px rgb(81 109 235);  /* 右+下にくっきり */
+}
+
+
+@media (max-width: 768px) {
+  .formsbox {
+    padding: 2em 2.5em;
+    border-radius: 16px;
+    font-size: 16px;
+    margin-top: 1em;
+
+  }
+  /* iOS Safari はフォーカスされた要素のフォントサイズが 16px 未満の場合にズームします。 */
+  /* フォントサイズを明示的に設定すると、無効にすることなくこの動作を防止できます */
+  /* ページ全体をピンチしてズームします。 */
+  .form-group input,
+  .form-group textarea {
+    font-size: 16px;
+  }
+   /* プレースホルダーテキストも、わずかなジャンプを避けるために一致する必要があります */
+  .form-group input::placeholder {
+    font-size: 16px;
+  }
+  textarea::placeholder {
+  font-size: 16px;
+  line-height: 1.4;
+}
+}
+
+
+   /* 入力フォーム 並び */
+.form-group {
+  margin-bottom: 1.5em;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: bold;
+  margin-bottom: 0.4em;
+}
+
+.form-group input,
+.form-group textarea {
+  color: #555c96;
+  padding: 0.6em;
+  font-size: 1em;
+  border: 1px solid #5386e4;
+  border-radius: 6px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, background-size 0.3s ease;
+  background-image: linear-gradient(#6bec80, #6bec80),
+    linear-gradient(#5386e4, #5386e4);
+  background-size: 0 1px, 100% 1px;
+  background-position: 0 100%, 0 100%;
+  background-repeat: no-repeat;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #6bec80;
+  outline: none;
+  background-size: 100% 2px, 100% 2px;
+}
+
+
+
+
+/* 入力フォーム送信ボタン */
+button.submit-btn {
+  background-color: rgb(81 109 235);    /* 鮮やかな青 */
+  color: white;                  /* 白文字 */
+  border: none;
+  padding: 0.8em 2em;
+  border-radius: 2rem;           /* 丸み */
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.2s ease;
+  max-width: 400px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 3rem;
+  margin-bottom: 0.1rem;
+}
+
+@keyframes wiggle-medium {
+  0%, 100% { transform: rotate(0deg); }
+  20% { transform: rotate(4deg); }
+  40% { transform: rotate(-4deg); }
+  60% { transform: rotate(3deg); }
+  80% { transform: rotate(-3deg); }
+}
+
+button.submit-btn {
+  transition: background-color 0.3s ease;
+}
+
+/* ホバーでぷるん（PCのみ） */
+@media (min-width: 769px) {
+  button.submit-btn:hover {
+    background-color: #46f790;
+    animation: wiggle-medium 0.4s ease-in-out;
+  }
+}
+
+/* スマホではアニメーション無効化 */
+@media (max-width: 768px) {
+  button.submit-btn:hover {
+    background-color: rgb(81, 109, 235) !important;  /* ホバー時も青のまま */
+    animation: none !important;
+  }
+}
+
+
+
+/* ------------------------------
+ * バナー表示　制御
+ * ------------------------------*/
+
+#songforms main {
+  padding: 0;
+}
+
+#songforms #page-title {
+  margin: -20px 13em 6.5em 13em;
+  padding: 0;
+}
+
+#songforms #page-title .container-center {
+  max-width: 100%;
+  padding: 0;
+}
+
+#songforms #page-title img {
+  width: 100%;
+  display: block;
+}
+
+
+@media (max-width: 768px) {
+#songforms #page-title {
+  margin: -12px 10px 5em 10px;
+}
+}
+
+/* ------------------------------
+ * About　テキスト制御
+ * ------------------------------*/
+
+
+#forms-attention p {
+  font-size: 1.2em;
+  font-weight: 650;         /* 少し軽めの太さで柔らかく */
+  line-height: 1.4;         /* 読みやすい行間 */
+  margin-bottom: 1em;
+}
+
+    @media (max-width: 768px) {
+#forms-attention p {
+  font-size: 1.05em;
+  line-height: 1.25;         /* 読みやすい行間 */
+  margin-bottom: 1.2em;
+}
+   }
+
+
+/* 太字ハイライトコメント */
+#forms-attention .bold-text-forms {
+  color: #7073ff;           /* 明るめの青 */
+  font-size: 1.25em;       
+  font-weight: 900;         /* 太め*/
+}
+
+
+
+/* 直下の補足コメント */
+#forms-attention .note-text-forms {
+  color: #7d7fff;       
+  font-size: 0.7em;       
+  margin-top: -0.25em;       
+  font-weight: 500;        
+  line-height: 1.5;      
+}
+
+
+
+@media (max-width: 768px) {
+#forms-attention .note-text-forms {
+  font-size: 0.9em;         /* 少し小さめの文字 */
+  margin-top: -1em;        /* 上に少し余白 */
+  font-weight: 600;         /* 少し軽めの太さで柔らかく */
+  line-height: 1.3;         /* 読みやすい行間 */
+}
+
+#forms-attention .bold-text-forms {
+  font-size: 1.2em;
+  font-weight: 900;         /* 太め*/       
+}
+    }
+
+
+  
+/* Noto Sans JP font for attention section */
+#songforms #forms-attention {
+  font-family: 'Noto Sans JP',
+    'Zen Maru Gothic',
+    'Hiragino Kaku Gothic ProN',
+    'ヒラギノ角ゴ ProN',
+    'Meiryo',
+    sans-serif;
+}
+
+/* Remove side padding so banner spans full width */
+#scr-banner.section {
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  width: 100vw;
+}
+
+/* ----------------------------------------
+ * スクロールバナー
+ * ----------------------------------------*/
+#scr-banner .scrolling-banner {
+  background-color: rgb(255, 255, 255);
+  margin: 4em 0 12em 0;  
+  color: rgb(39, 73, 228);
+  width: 100%;
+  padding: 0.3em 0;
+  overflow: hidden;
+  font-weight: 700;         /* 少し軽めの太さで柔らかく */
+  font-family: 'DotGothic16', 'Zen Maru Gothic',
+    'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN', 'Meiryo', sans-serif;
+}
+
+
+@media (max-width: 768px) {
+#scr-banner .scrolling-banner {
+  margin: 4em 0 10em 0;  
+  padding: 0.3em 0;
+}
+}
+
+
+
+
+#scr-banner .scrolling-banner .scrolling-text {
+  display: inline-block;
+  white-space: nowrap;
+  animation: banner-scroll 20s linear infinite;
+}
+
+#scr-banner .scrolling-banner .scrolling-text span {
+  padding: 0.8em 1rem;
+}
+
+@keyframes banner-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+
+
+/* ----------------------------------------
+ * 宗拓ぽよん　アニメーション
+ * ----------------------------------------*/
+#footer-placeholder {
+  position: relative;
+}
+
+.footer-dangos {
+  position: absolute;
+  top: -200px; /* offset so dangos peek above the footer */
+  left: 0;
+  right: 0;
+  pointer-events: none;
+  z-index: 5; /* in front of particles but still behind the footer */
+}
+
+.footer-dangos img {
+  position: absolute;
+  top: 0;
+  width: 250px;
+  max-width: 30vw;
+  --dango-rotation: 0deg;
+  transform: rotate(var(--dango-rotation)) translateY(0);
+  animation: poyonBounce 1.2s ease-in-out infinite;
+}
+
+@media (max-width: 768px) {
+  .footer-dangos {
+    top: -110px;
+  }
+  .footer-dangos img {
+    top: 0;
+    width: 150px;
+
+  }
+}
+
+.footer-dangos .left-dango {
+  left: 400px;
+  top: -10px;
+  animation-delay: 0s;
+  --dango-rotation: 2deg;
+}
+
+.footer-dangos .right-dango {
+  right: 400px;
+  animation-delay: 0.5s;
+  --dango-rotation: -2deg;
+}
+
+@media (max-width: 768px) {
+.footer-dangos .left-dango {
+  left: 80px;
+  top: -5px;
+  animation-delay: 0s;
+  --dango-rotation: 2deg;
+}
+.footer-dangos .right-dango {
+  right: 80px;
+  animation-delay: 0.5s;
+  --dango-rotation: -2deg;
+}
+}
+
+
+@keyframes poyonBounce {
+     0%   { transform: rotate(var(--dango-rotation)) scale(.9,1.05)      translateY(0); }
+     15%  { transform: rotate(var(--dango-rotation)) scale(1.1,.9)   translateY(10%); }
+     30%  { transform: rotate(var(--dango-rotation)) scale(1,1)   translateY(0); }
+     45%  { transform: rotate(var(--dango-rotation)) scale(1.05,.95) translateY(5%); }
+     60%  { transform: rotate(var(--dango-rotation)) scale(1,1)      translateY(0); }
+     75%  { transform: rotate(var(--dango-rotation)) scale(1.02,.98) translateY(2%); }
+     90%  { transform: rotate(var(--dango-rotation)) scale(1,1)      translateY(0); }
+     100% { transform: rotate(var(--dango-rotation)) scale(1,1)      translateY(0); }
+      }

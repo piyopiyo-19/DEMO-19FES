@@ -4,20 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MNTKFES！</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="footer.css">
-  
-  <style>
-    [data-aos] {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-    }
-    [data-aos].aos-animate {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  </style>
+  <meta name="robots" content="noindex, nofollow">  <!-- ✅ 検索避け -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/index.css">
 </head>
 
 <body id="top">
@@ -30,36 +20,7 @@
   
 
   <!-- ✅ ヘッダー -->
-  <header class="site-header">
-    <a href="index.html" class="site-logo">
-      <img src="images/logo.png" alt="MNTKFES！ロゴ">
-    </a>
-  </header>
-
-      <div class="toggle_btn" id="menu-toggle">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-
-
-  <!-- ✅ メニュー -->
-  <nav>
-    <div class="inner">
-      <ul>
-        <li><a href="index.html">ホーム</a></li>
-        <li><a href="howto.html">参加について</a></li>
-        <li><a href="guideline.html">サークル参加者向けガイドライン</a></li>
-        <li><a href="#gallery">ギャラリー</a></li>
-        <li><a href="#download">ダウンロード</a></li>
-        <li><a href="#faq">よくある質問</a></li>
-        <li><a href="song_forms.html">お問い合わせ</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <!-- ✅ マスク -->
-  <div id="mask"></div>
+<div id="header-placeholder"></div>
 
 
 
@@ -123,26 +84,40 @@
 
 
 
-<!-- ナビゲーションボタン
-<div class="center-line bg-highlight" data-aos>
-  <img src="images/mntkfes-tg.png" alt="オンリー概要" class="mntkfes-tg-img">
+<!-- カルーセル -->
+<div class="cal-container">
+  <button class="carousel-button left"><img src="images/left.svg" alt="前へ"></button>
+  <div class="carousel">
+    <div class="item clone"><img src="images/ka3.png" alt="クローン画像"></div><!-- 最後のスライドを先頭にクローン -->
+    <div class="item"><img src="images/ka1.png" alt="画像1"></div>
+    <div class="item"><img src="images/ka2.png" alt="画像2"></div>
+    <div class="item"><img src="images/ka3.png" alt="画像3"></div>
+    <div class="item clone"><img src="images/ka1.png" alt="クローン画像"></div><!-- 最初のスライドを末尾にクローン -->
+  </div>
+  <button class="carousel-button right"><img src="images/right.svg" alt="次へ"></button>
 </div>
 
-セクション -->
+<div class="dots">
+  <span class="dot active"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+</div>
+
+
 
 
 
 
 <!-- ナビゲーションボタンセクション -->
  <section class="navvvv" data-aos>
-<div class="nav-bar" data-aos>
-  <div class="nav-bar-inner">
-    <a href="howto.html" class="nav-item"><img src="images/icon-join.svg" alt="">参加について</a>
-    <a href="guideline.html" class="nav-item"><img src="images/icon-guide.svg" alt="">ガイドライン</a>
-    <a href="#gallery" class="nav-item"><img src="images/icon-gallery.svg" alt="">ギャラリー</a>
-    <a href="#download" class="nav-item"><img src="images/icon-download.svg" alt="">ダウンロード</a>
-    <a href="#faq" class="nav-item"><img src="images/icon-faq.svg" alt="">よくある質問</a>
-    <a href="#contact" class="nav-item"><img src="images/icon-contact.svg" alt="">お問い合わせ</a>
+<div class="top-nav-bar" data-aos>
+  <div class="top-nav-bar-inner">
+    <a href="howto.html" class="top-nav-item"><img src="images/icon-join.svg" alt="">参加について</a>
+    <a href="guideline.html" class="top-nav-item"><img src="images/icon-guide.svg" alt="">ガイドライン</a>
+    <a href="#gallery" class="top-nav-item"><img src="images/icon-gallery.svg" alt="">ギャラリー</a>
+    <a href="#download" class="top-nav-item"><img src="images/icon-download.svg" alt="">ダウンロード</a>
+    <a href="faq.html" class="top-nav-item"><img src="images/icon-faq.svg" alt="">FAQ・お問い合わせ</a>
+    <a href="#contact" class="top-nav-item"><img src="images/icon-contact.svg" alt="">お問い合わせ</a>
   </div>
 </div>
 </section>
@@ -322,21 +297,6 @@
 
 
 
-<!-- フッター-
-
-  <section class="section" id="news" data-aos>
-  <div class="henkoutyuuuu">
-    <h2>お知らせ・更新履歴</h2>
-    <div class="scroller">
-    <p>2025/05/19 - ホームページ仮公開</p>
-    <p>2025/05/19 - イベント概要を更新しました</p>
-    <p>2025/05/19 - トップページを更新しました</p>
-    </div>
-  </div>
-  </section>
-
-ッター-->
-
   <section class="section" id="gallery" data-aos>
   <div class="henkoutyuuuu">
   <h2>イベント企画</h2>
@@ -382,72 +342,7 @@
 </div>
 
 <!-- フッター-->
-<footer class="site-footer">
-  <div class="footer-container">
-    <div class="footer-left">
-      <img src="images/footer-logo.png" alt="サイトロゴ" class="footer-logo">
-      <div class="footer-info">
-        <p>MNTKFES!</p>
-      </div>
-    </div>
-
-    <div class="footer-right">
-      <ul class="footer-nav">
-        <li><a href="index.html">ホーム</a></li>
-        <li><a href="howto.html">参加について</a></li>
-        <li><a href="guideline.html">ガイドライン</a></li>
-        <li><a href="#gallery">ギャラリー</a></li>
-        <li><a href="#download">ダウンロード</a></li>
-        <li><a href="#faq">よくある質問</a></li>
-        <li><a href="song_forms.html">お問い合わせ</a></li>
-      </ul>
-      <div class="footer-social">
-        <a href="https://twitter.com" target="_blank"><img src="images/twitter-icon.png" alt="Twitter"></a>
-      </div>
-    </div>
-  </div>
-
-  <div class="footer-bottom">
-    <p>&copy; 2025 MNTKFES!実行委員会.</p>
-    <small>Produced by PIYOPIYO</small>
-  </div>
-</footer>
-<!-- フッター-->
-
-
-<!-- ✅ スマホ向けの縦型フッター -->
-<footer class="footer-mobile">
-  <div class="footer-brand">
-    <img src="images/footer-logo.png" alt="サイトロゴ" class="footer-logo">
-    <div class="footer-sns">
-      <a href="https://twitter.com"><img src="images/twitter-icon.png" alt="Twitter"></a>
-    </div>
-  </div>
-
-  <div class="footer-links">
-    <div class="footer-columns">
-        <li><a href="index.html">ホーム</a></li>
-        <li><a href="howto.html">参加について</a></li>
-        <li><a href="guideline.html">ガイドライン</a></li>
-        <li><a href="#gallery">ギャラリー</a></li>
-        <li><a href="#download">ダウンロード</a></li>
-        <li><a href="#faq">よくある質問</a></li>
-        <li><a href="song_forms.html">お問い合わせ</a></li>
-    </div>
-  </div>
-
-
-
-  <div class="footer-copy">
-    <p>&copy; 2025 MNTKFES!実行委員会.</p>
-    <small>Produced by PIYOPIYO</small>
-  </div>
-</footer>
-
-
-
-
-
+<div id="footer-placeholder"></div>
 
 
 
@@ -462,109 +357,14 @@
 
 
 
+<!-- ✅ 共通スクリプト-->
+<script src="js/common.js"></script>
+
+<!-- ✅ indexスクリプト-->
+<script src="js/index.js"></script>
+
+   
 
 
-  <script>
-    // スクロール演出
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('aos-animate');
-      }
-    });
-  }, {
-    rootMargin: '0px 0px -250px 0px'  // ← 下から200px入ってから発火
-  });
-
-  document.querySelectorAll('[data-aos]').forEach(el => observer.observe(el));
-
-    // タブ切替
-    function showTab(tab) {
-      document.getElementById('circle').style.display = tab === 'circle' ? 'block' : 'none';
-      document.getElementById('general').style.display = tab === 'general' ? 'block' : 'none';
-    }
-
-    // ハンバーガーメニュー開閉
-      const toggle = document.getElementById('menu-toggle');
-      const body = document.body;
-      const mask = document.getElementById('mask');
-
-      toggle.addEventListener('click', () => {
-      body.classList.toggle('open');
-      });
-
-      mask.addEventListener('click', () => {
-      body.classList.remove('open');
-      mask.style.display = 'none'; // ← 明示的に消す
-      });
-
-
-      
-  window.addEventListener('load', () => {
-    const logo = document.querySelector('.top-logo');
-    const main2 = document.querySelector('.top-main2');
-    const subLogo = document.querySelector('.top-logo-ske');
-
-    setTimeout(() => {
-      logo.classList.add('visible');
-    }, 30); // logo4.png
-
-    setTimeout(() => {
-      main2.classList.add('visible');
-    }, 0.2); // s-main2.png
-
-    setTimeout(() => {
-      subLogo.classList.add('visible');
-    }, 1800); // logo-ske.png：logo4.png表示後0.5秒
-  });
-
-
-
-
-
-    // ズーム+フェード
-  document.addEventListener("DOMContentLoaded", function () {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('animate-in');
-        }
-      });
-    }, {
-      threshold: 0.1 // スマホ向けに緩く
-    });
-
-    const targets = document.querySelectorAll('.slide-icon-button');
-    targets.forEach(el => {
-      observer.observe(el);
-
-      // 画面に既に表示されている場合も発火させる
-      if (el.getBoundingClientRect().top < window.innerHeight) {
-        el.classList.add('animate-in');
-      }
-    });
-  });
-
-
-
-    // ページトップボタン
-  const pageTop = document.getElementById("pageTop");
-
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 300) {
-      pageTop.classList.add("show");
-    } else {
-      pageTop.classList.remove("show");
-    }
-  });
-
-  pageTop.addEventListener("click", (e) => {
-    e.preventDefault();
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
-  
-
-
-  </script>
 </body>
 </html>

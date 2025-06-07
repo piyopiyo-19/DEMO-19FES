@@ -1,0 +1,232 @@
+
+/* 共通のcss */
+
+/* =============
+背景パターン 設定
+============= */
+.bg_pattern {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+  z-index: -1;
+}
+.Paper_v2 {
+  background-image:
+    repeating-linear-gradient(to bottom,
+      transparent 25px,
+      rgba(0, 0, 0, 0.04) 26px,  rgba(0, 0, 0, 0.04) 26px,
+      transparent 27px,  transparent 51px,
+      rgba(0, 0, 0, 0.04) 52px,  rgba(0, 0, 0, 0.04) 52px,
+      transparent 53px,  transparent 77px,
+      rgba(0, 0, 0, 0.04) 78px,  rgba(0, 0, 0, 0.04) 78px,
+      transparent 79px,  transparent 103px,
+      rgba(0, 0, 0, 0.04) 104px,  rgba(0, 0, 0, 0.04) 104px,
+      transparent 105px,  transparent 129px,
+      rgba(0, 0, 0, 0.04) 130px,  rgba(0, 0, 0, 0.04) 130px),
+
+    repeating-linear-gradient(to right,
+      transparent 25px,
+      rgba(0, 0, 0, 0.04) 26px,  rgba(0, 0, 0, 0.04) 26px,
+      transparent 27px,  transparent 51px,
+      rgba(0, 0, 0, 0.04) 52px,  rgba(0, 0, 0, 0.04) 52px,
+      transparent 53px,  transparent 77px,
+      rgba(0, 0, 0, 0.04) 78px,  rgba(0, 0, 0, 0.04) 78px,
+      transparent 79px,  transparent 103px,
+      rgba(0, 0, 0, 0.04) 104px,  rgba(0, 0, 0, 0.04) 104px,
+      transparent 105px,  transparent 129px,
+      rgba(0, 0, 0, 0.04) 130px,  rgba(0, 0, 0, 0.04) 130px);
+}
+
+
+
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+body {
+  letter-spacing: .025em;
+  line-height: 1.8;
+  color: #5e5f92;
+  font-weight: 520; /* 共通のフォント */
+}
+body {
+  font-family:
+    "Zen Maru Gothic",            /* Google Fonts かわいい丸ゴ */
+    "Hiragino Kaku Gothic ProN",
+    "ヒラギノ角ゴ ProN",
+    "Meiryo",
+    sans-serif;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+.section {
+  padding: 50px 20px 
+}
+
+#top.section {
+  padding-top: 10px;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+.site-footer,
+.footer-mobile {
+  margin-top: auto; /* ← 念のためつけておくと安全 */
+}
+
+
+@media (min-width: 769px) {
+  body {
+    font-size: 20px;     /* 通常より少し大きめ */
+    font-weight: 600;    /* 少し太め（デフォルトより強調） */
+  }
+
+  p, li {
+    font-size: 1.2rem;  /* 通常段落やリストも少し大きく */
+    font-weight: 600;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+}
+
+
+/* --------見出し制御---------*/
+h1 {
+  font-size: 2rem;
+}
+h2 {
+  font-size: 1.75rem;
+}
+h3 {
+  font-size: 1rem;
+}
+h4 {
+  font-size: 0.8rem;
+}
+h5 {
+  font-size: 0.75rem;
+}
+h6 {
+  font-size: 0.875rem;
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  .section {
+    padding: 60px 15px;
+  }
+
+
+  h1 {
+  font-size: 1.6rem;
+  }
+  h2 {
+  font-size: 1.5rem;
+  }
+  h3 {
+  font-size: 0.95rem;
+  }
+  h4 {
+  font-size: 0.8rem;
+  }
+  h5 {
+  font-size: 0.75rem;
+  }
+  h6 {
+  font-size: 0.65rem;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --------セクションナビゲーション ---------*/
+.section-nav {
+  text-align: center;
+  padding: 2em 1em;
+}
+
+.circle-nav a {
+  padding: 0.6em 1.5em;
+  background: #ffffff; /* ボタンの背景色：水色 */
+  border: 2px solid #8091f5;
+  border-radius: 999px; /* フィレット効果のため、かなり大きく */
+  color: #8091f5;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3em;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.circle-nav a:hover {
+  border: 2px solid #45cebc;
+  color: #45cebc;
+}
+
+@media (max-width: 768px) {
+  .circle-nav {
+    gap: 10px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 0 10px;
+    justify-content: flex-start;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .circle-nav a {
+    font-size: 0.75rem;
+    padding: 0.6em 1.2em;
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin-bottom: 0.6em; /* ← 折り返し時の縦スペースを広げる */
+  }
+}
