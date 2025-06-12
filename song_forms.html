@@ -14,42 +14,53 @@
 
 
 
-<!-- 必須設定 -->
-<meta property="og:title" content="宗拓フェス! イメソンアンケート" />
-<meta property="og:description" content="宗拓イメージソングを大募集！" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://19fes-demo-mk.netlify.app/song_forms.html" />
-<meta property="og:image" content="https://19fes-demo-mk.netlify.app/images/bana-fmmn.png" />　<!-- 画像の直リンク貼る！！！！ -->
-<meta property="og:site_name" content="MNTKFES!" />
+ <!-- 必須設定 -->
+ <meta property="og:title" content="宗拓フェス! イメソンアンケート" />
+ <meta property="og:description" content="宗拓イメージソングを大募集！" />
+ <meta property="og:type" content="website" />
+ <meta property="og:url" content="https://19fes-demo-mk.netlify.app/song_forms.html" />
+ <meta property="og:image" content="https://19fes-demo-mk.netlify.app/images/bana-ank-l.png?v=6" />　<!-- 画像の直リンク貼る！！！！ -->
+ <meta property="og:site_name" content="MNTKFES!" />
 
-<!-- Twitterカード対応-->
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="宗拓フェス! イメソンアンケート" />
-<meta name="twitter:description" content="宗拓イメージソングを大募集！" />
-<meta name="twitter:image" content="https://19fes-demo-mk.netlify.app/images/bana-fmmn.png" /> <!-- 画像の直リンク貼る！！！！ -->
+ <!-- Twitterカード対応-->
+ <meta name="twitter:card" content="summary_large_image" />
+ <meta name="twitter:title" content="宗拓フェス! イメソンアンケート" />
+ <meta name="twitter:description" content="宗拓イメージソングを大募集！" />
+ <meta name="twitter:image" content="https://19fes-demo-mk.netlify.app/images/bana-ank-l.png?v=6" /> <!-- 画像の直リンク貼る！！！！ -->
 
 
 
 </head>
 
-
 <body id="songforms">
+  <div id="page-loader">
+    <div class="loader-form">
+      <div></div><div></div><div></div><div></div><div></div><div></div>
+      <div></div><div></div><div></div><div></div><div></div><div></div>
+    </div>
+    <div class="loader-text">
+      <span>N</span><span>o</span><span>w</span><span>&nbsp;</span>
+      <span>L</span><span>o</span><span>a</span><span>d</span><span>i</span><span>n</span><span>g</span><span>.</span><span>.</span><span>.</span>
+    </div>
+  </div>
+
   <div class="bg_pattern Paper_v2"></div>
 
 
-  <!-- ✅ ヘッダー -
-<div id="header-placeholder"></div>
 
+
+
+   <!-- ✅ ヘッダー -
+   <div id="header-placeholder"></div>
     ✅ ヘッダー --->
 
 
 
-    <!-- 本文 -->
-  <main>
-    
+   <!-- 本文 -->
+<main> 
     <section class="section" id="page-title" data-aos-f>
       <div class="container-center center-line">
-          <img src="images/bana-fmmn.png" alt="フォームバナー" class="no-padding-img">
+          <img src="images/bana-ank.png" alt="フォームバナー" class="no-padding-img">
         </div>
     </section>
 
@@ -59,93 +70,101 @@
     <section class="section" id="forms-attention" data-aos-f>
       <div class="container-center center-line">
         <div class="forms-white-box">
-          <img src="images/formsintro.png" alt="フォームイントロ" class="forms-intro-img">
-        <p>宗拓フェス！特別企画として<br><span class="bold-text-forms">宗拓イメージソングを大募集！</span></p>
-        <p>募集したイメソンは<br><span class="bold-text-forms">『イベント特製プレイリスト』</span>として<br><span class="bold-text-forms">Spotifyにて公開予定♪</span></p>
-        <p>２人の世界観にぴったりな１曲、ぜひご紹介ください！</p>
-        <p class="note-text-forms">♪完全匿名＆お一人様何回でも回答いただけます♪</p>
+          <img src="images/info-folm.png" alt="フォームイントロ" class="forms-intro-img">
+          <p>WEBオンリー特別企画として<br><span class="bold-text-forms">宗拓イメージソングを大募集！</span></p>
+          <p>お寄せいただいた楽曲は<br><span class="bold-text-forms">『イベント限定プレイリスト』</span>にまとめ<br><span class="bold-text-forms">Spotifyにて公開予定♪</span></p>
+          <p style="font-size:0.9em; margin-bottom:2em;">２人の世界観にぴったりな１曲、<br>ぜひご紹介ください！</p>
+            <!-- <p class="note-text-forms">♪完全匿名＆お一人様何回でも回答いただけます♪</p> -->
+        </div>
       </div>
+    </section>
+
+       
+    <div class="scrolldown"><span>Scroll</span> </div>
+
+
+
+
+    <section class="section" id="formdayo" data-aos-f>
+      <div class="container-center">
+
+
+      <div class="formsbox">
+        <div class="forms-dangos" data-aos-f>
+          <img src="images/ibib.png" alt="いぶドット" class="left-dango">
+          <img src="images/tktk.png" alt="しんドット" class="right-dango">
+        </div>
+        <form action="https://docs.google.com/forms/d/e/1FAIpQLScz4uerKTzyo_z02RvlFQpAYOtwVh2HDzSnj0JfWYrxBBt7EA/formResponse"
+      method="POST"
+      target="hidden_iframe"
+      onsubmit="submitted = true;">
+           <div class="form-title"><img src="images/form-title.png" alt="フォームタイトル" class="form-title-img"></div>
+          <div class="form-group">
+            <p style="color:#7d7fff; text-align:center; font-size:0.85em; margin-bottom:2em;">＼完全匿名＆お一人様何回でも回答いただけます！／</p>
+            <label for="song">曲名<span class="required-badge">必須</span></label>
+            <input type="text" id="song" name="entry.1983980935" required>
+           </div>
+
+           <div class="form-group">
+             <label for="artist">アーティスト名<span class="required-badge">必須</span></label>
+             <input type="text" id="artist" name="entry.2024373341" required>
+           </div>
+
+           <div class="form-group">
+             <label for="comment">アピールポイント</label>
+             <textarea id="comment" name="entry.1096785567" rows="6"
+             placeholder="※コメント内容は主催展示企画の中で使用させていただく場合がございます&#10;※歌詞の直接引用がある場合掲載しきれない可能性があります"></textarea>
+           </div>
+
+           <div class="form-group">
+            <button type="submit" class="submit-btn">イメソンおくる！</button>
+           </div>
+
+          </form>
+       </div>
+      </div>
+    </section>
+
+    <section class="section" id="scr-banner" data-aos-f>
+      <div class="scrolling-banner">
+        <div class="scrolling-text">
+          <span>PICTSQUARE WEBオンリー『宗拓フェス！』サークル参加受付中！（サークル参加申込：2025年12月9日迄）　</span>
+          <span>PICTSQUARE WEBオンリー『宗拓フェス！』サークル参加受付中！（サークル参加申込：2025年12月9日迄）　</span>
+          <span>PICTSQUARE WEBオンリー『宗拓フェス！』サークル参加受付中！（サークル参加申込：2025年12月9日迄）　</span>
+        </div>
       </div>
     </section>
 
 
-        <section class="section" id="formdayo" data-aos-f>
-      <div class="container-center">
-          <div class="formsbox">
-
-
-  <form action="https://docs.google.com/forms/d/e/1FAIpQLSfcPZbcm-mAL9mWV3tKMSY8o2ui58m-zIzu5hXXIB_uzzhoxg/formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
-
-      <div class="form-group">
-  <label for="song">曲名</label>
-  <input type="text" id="song" name="entry.694791822" required>
-</div>
-
-<div class="form-group">
-  <label for="artist">アーティスト名</label>
-  <input type="text" id="artist" name="entry.843564125" required>
-</div>
-
-<div class="form-group">
-  <label for="comment">アピールポイント（任意）</label>
-  <textarea id="comment" name="entry.137029353" rows="6"
-    placeholder="※歌詞の直接引用がある場合掲載しきれない可能性があります。&#10;あらかじめご了承ください"></textarea>
-</div>
-
-
-<div class="form-group">
-  <button type="submit" class="submit-btn">イメソンおくる！</button>
-</div>
-
-</form>
-
-</div>
-</div>
-
-<section class="section" id="scr-banner" data-aos-f>
-<div class="scrolling-banner">
-  <div class="scrolling-text">
-    <span>WEBオンリーイベント『宗拓フェス！』サークル参加受付中！　</span>
-    <span>WEBオンリーイベント『宗拓フェス！』サークル参加受付中！　</span>
-    <span>WEBオンリーイベント『宗拓フェス！』サークル参加受付中！　</span>
-    <span>WEBオンリーイベント『宗拓フェス！』サークル参加受付中！　</span>
-  </div>
-</div>
-</section>
-
-
-<!-- 送信後、Thanksページに遷移する -->
-<iframe name="hidden_iframe" style="display:none;" onload="if(submitted){ window.location='thanks.html'; }"></iframe>
-
-
-
+ <!-- 送信後、Thanksページに遷移する -->
+ <iframe name="hidden_iframe" style="display:none;" onload="if(submitted){ window.location='thanks.html'; }"></iframe>
 
 
 </main>
 
   <div class="bottom-white-gap"></div>
 
-<!-- フッター-->
-<div id="footer-placeholder"></div>
+ <!-- デモフッター-->
+ <div id="footer-placeholder" data-src="includes/footer-pre.html"></div>
 
 
-<!-- ✅ ページトップボタン-->
+ <!-- ✅ ページトップボタン
 
-<a href="#" id="pageTop" class="pagetop">
-  <img src="images/Pagetop.png" alt="ページトップに戻る">
-</a>
+ <a href="#" id="pageTop" class="pagetop">
+ <img src="images/Pagetop.png" alt="ページトップに戻る">
+ </a>
+
+ プボタン-->
 
 <!-- パーティクル -->
 <div id="floating-particles"></div>
 
-<!-- 宗拓ぽよん -->
-  <div class="footer-dangos" data-aos-f>
-    <img src="images/ibib.png" alt="いぶドット" class="left-dango">
-    <img src="images/tktk.png" alt="しんドット" class="right-dango">
-  </div>
-
-
-
+<!-- 宗拓ぽよん -
+<div class="footer-dangos" data-aos-f>
+  <img src="images/ibib.png" alt="いぶドット" class="left-dango">
+  <img src="images/tktk.png" alt="しんドット" class="right-dango">
+</div>
+ -->
 
 
 <!-- ✅ 共通スクリプト-->
@@ -156,8 +175,5 @@
 
 
 
-
-
- 
 </body>
 </html>
