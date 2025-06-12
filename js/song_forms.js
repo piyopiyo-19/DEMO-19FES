@@ -2,9 +2,9 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   initHamburgerMenu();
-  setupAosAnimations('[data-aos-f]');
   setupPageTopButton(300);
   attachFooterDangos();
+  attachFormsDangos();
 });
 
 var submitted = false; // used by form iframe callback
@@ -12,7 +12,7 @@ var submitted = false; // used by form iframe callback
 function createParticles() {
   const container = document.getElementById('floating-particles');
   if (!container) return;
-  const symbols = ['heart', 'star', 'ball', 'shoes', 'pto', 'p-ina-g'];
+  const symbols = ['heart', 'star', 'ball', 'shoes', 'pto', 'hand', 'piano', 'p8-p', 'p-ina-g','p-ina-g'];
   const total = 25;
   const cols = Math.ceil(Math.sqrt(total));
   const rows = Math.ceil(total / cols);
@@ -55,6 +55,24 @@ function attachFooterDangos() {
   const placeholder = document.getElementById('footer-placeholder');
   if (!placeholder) return;
 
+  const images = dangos.querySelectorAll('img');
+  let loaded = 0;
+
+  const startAnim = () => {
+    loaded++;
+    if (loaded === images.length) {
+      dangos.classList.add('animate');
+    }
+  };
+
+  images.forEach(img => {
+    if (img.complete) {
+      startAnim();
+    } else {
+      img.addEventListener('load', startAnim);
+    }
+  });
+
   const insert = () => {
     if (placeholder.firstElementChild) {
       placeholder.style.position = 'relative';
@@ -65,3 +83,62 @@ function attachFooterDangos() {
   };
   insert();
 }
+
+function attachFormsDangos() {
+  const dangos = document.querySelector('.forms-dangos');
+  if (!dangos) return;
+
+  const images = dangos.querySelectorAll('img');
+  let loaded = 0;
+
+  const startAnim = () => {
+    loaded++;
+    if (loaded === images.length) {
+      dangos.classList.add('animate');
+    }
+  };
+
+  images.forEach(img => {
+    if (img.complete) {
+      startAnim();
+    } else {
+      img.addEventListener('load', startAnim);
+    }
+  });
+}
+
+window.addEventListener('load', () => {
+  const loader = document.getElementById('page-loader');
+  const header = document.getElementById('page-title');
+  const contents = document.querySelectorAll(
+    '#forms-attention, .scrolldown, #formdayo, #scr-banner, .forms-dangos, .footer-dangos'
+  );
+
+  const hideLoader = () => {
+    if (!loader) return;
+    loader.classList.add('hide');
+    setTimeout(() => {
+      loader.style.display = 'none';
+    }, 400);
+  };
+
+  const showHeader = () => {
+    if (header) header.classList.add('aos-animate');
+  };
+
+  const showContents = () => {
+    contents.forEach((el, i) => {
+      setTimeout(() => el.classList.add('aos-animate'), i * 200);
+    });
+  };
+
+  hideLoader();
+    setTimeout(() => {
+      showHeader();
+      setTimeout(showContents, 600);
+      // Apply default observer to all elements except the form section
+      setupAosAnimations('[data-aos-f]:not(#formdayo)');
+      // Delay animation trigger for the form section
+      setupAosAnimations('#formdayo', { threshold: 1 });
+    }, 400);
+});
