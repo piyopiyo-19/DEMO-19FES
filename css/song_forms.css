@@ -12,8 +12,8 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: #496bff;
-  z-index:-2; /* base layer for the page background */
+  background-color: #4e6eff;
+  z-index:-2; 
 }
 
 /* song_formsページ用: 下部に白い余白を追加するため
@@ -31,7 +31,6 @@
 }
 
 
-
 #thanks .bg_pattern {
   top: 0;
   height: 100vh;
@@ -39,7 +38,7 @@
 
 /* Thanksページ用の白い余白 */
 #thanks .bottom-white-gap {
-  height: 180px;
+  height: 50px;
   background: #fff;
   flex-shrink: 0;
 }
@@ -51,7 +50,7 @@
   height: 40px;
 }
 #thanks .bottom-white-gap {
-  height: 95px;
+  height: 40px;
 }
    }
 
@@ -228,14 +227,15 @@ h6 {
   transform: translateY(0);
 }
 
-/* フォームのフェード演出　速度 */
+/* フォームのズーム演出 */
 #formdayo[data-aos-f] {
-  transform: translateY(100px);
-  transition: opacity 0.8s ease-out, transform 0.6s ease-out;
+  transform: scale(0.9);
+  /* speed up the zoom for a snappier appearance */
+  transition: opacity 0.2s ease-out, transform 0.2s ease-out;
 }
 
 #formdayo[data-aos-f].aos-animate {
-  transform: translateY(0);
+  transform: scale(1);
 }
 
 .section {
@@ -271,25 +271,57 @@ textarea::placeholder {
   background-color: #ffffff;
   border-left: none;
   border-right: none;
-  padding: 6em 0.6em 1em 0.8em;
+  padding: 7em 0.8em 1em 0.8em;
   margin-bottom: 1.5em;
 }
 
-/* 上部に配置するイントロ画像 */
+/* zoom-in animation for the white box container */
+#forms-attention {
+  opacity: 0;
+  transform: scale(0.95);
+  /* speed up the zoom effect for a snappier appearance */
+  transition: transform 0.3s ease-out, opacity 0.35s ease-out;
+}
+
+#forms-attention.zoom-in {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* 上部に配置するinfo画像 */
 .forms-white-box .forms-intro-img {
   position: absolute;
-  top: -1em;
+  top: -0.8em;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%) scale(0.8);
   width: 100%;
   max-width: 650px;
   height: auto;
   pointer-events: none;
+  opacity: 0;
+  transition: popZoom 0.3s ease-out, opacity 0.3s ease-out forwards;
+}
+
+.forms-white-box .forms-intro-img.pop {
+  animation: popZoom 0.3s ease-out forwards;
+}
+
+/* container for the intro text */
+.forms-intro-text {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.25s ease-out;
+}
+
+.forms-intro-text.zoom-in {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 @media (max-width: 768px) {
   .forms-white-box {
-    padding: 6em 0.5em 2em 0.5em;
+    padding: 6em 0.5em 3em 0.5em;
     margin-bottom: 1.5em;
   }
   .forms-white-box .forms-intro-img {
@@ -299,14 +331,62 @@ textarea::placeholder {
   }
 }
 
+/* キャラ画像を白いボックスの左右に配置 */
+.forms-white-box .intro-chara {
+  position: absolute;
+  width: 265px;
+  max-width: 35vw;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+.forms-white-box .intro-chara.left {
+  left: 430px;
+  width: 262px;
+  bottom: -6em;
+}
+
+.forms-white-box .intro-chara.right {
+  right: 440px;
+  bottom: -7.5em;
+}
+
+.forms-white-box .intro-chara.poyon {
+  animation: charaPoyon 0.4s ease-out forwards,
+             float1 3s ease-in-out 0.4s infinite;
+}
+
+.forms-white-box .intro-chara.right.poyon {
+  animation: charaPoyon 0.4s ease-out forwards,
+             float2 3s ease-in-out 0.4s infinite;
+}
 
 
-/* 入力フォーム 青枠 */
+@media (max-width: 768px) {
+  .forms-white-box .intro-chara {
+    width: 130px;
+  }
+  .forms-white-box .intro-chara.left {
+    left: 15px;
+    bottom: -7em;
+    width: 150px;
+  }
+  .forms-white-box .intro-chara.right {
+    right: 15px;
+    bottom: -7.9em;
+    width: 154px;
+  }
+}
+
+
+/* 入力フォーム box*/
 .formsbox {
   background-color: #ffffff;
  /*  border: 2px solid rgb(81 109 235); */
   border-radius: 20px;
-  padding: 5px 3em 2.5em 3em;
+  padding: 25px 3em 2.5em 3em;
   max-width: 700px;
   margin: 0 auto;
   margin-top: 7em;
@@ -318,21 +398,38 @@ textarea::placeholder {
 .form-title {
   text-align: center;
   margin-bottom: 0.5em;
+  opacity: 0;
 }
 
+.form-title.zoom-in {
+  /* shorten the animation for a snappy "pop" effect */
+  animation: formTitleZoom 0.2s ease-out forwards;
+}
+
+/* extend title image nearly full width inside the form box */
 .form-title-img {
   display: block;
   width: calc(100% + 6em - 10px);
-  max-width: none;
-  margin: 0 calc(5px - 3em);
-  height: auto;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
+@keyframes formTitleZoom {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
 
 
 @media (max-width: 768px) {
   .formsbox {
-    padding: 6px 2.5em 2em 2.5em;
+    padding: 12px 2.5em 2em 2.5em;
     border-radius: 16px;
     font-size: 16px;
     margin-top: 1em;
@@ -340,21 +437,22 @@ textarea::placeholder {
   }
   /* adjust title image width to match reduced padding */
   .form-title-img {
+    display: block;
     width: calc(100% + 5em - 10px);
-    margin: 0 calc(5px - 2.5em);
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
 
 
 
-  /* iOS Safari はフォーカスされた要素のフォントサイズが 16px 未満の場合にズームします。 */
-  /* フォントサイズを明示的に設定すると、無効にすることなくこの動作を防止できます */
-  /* ページ全体をピンチしてズームします。 */
+  /* iOS Safari ズーム */
   .form-group input,
   .form-group textarea {
     font-size: 16px;
   }
-   /* プレースホルダーテキストも、わずかなジャンプを避けるために一致する必要があります */
+
   .form-group input::placeholder {
     font-size: 16px;
   }
@@ -479,7 +577,7 @@ button.submit-btn {
 }
 
 #songforms #page-title {
-  margin: -20px 13em 6.5em 13em;
+  margin: -20px 13em 2em 13em;
   padding: 0;
 }
 
@@ -493,10 +591,18 @@ button.submit-btn {
   display: block;
 }
 
+@media (min-width: 769px) {
+  #songforms #page-title img {
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 
 @media (max-width: 768px) {
 #songforms #page-title {
-  margin: -12px 10px 5em 10px;
+  margin: -12px 10px 1.5em 10px;
 }
 }
 
@@ -508,14 +614,14 @@ button.submit-btn {
 #forms-attention p {
   font-size: 1.2em;
   font-weight: 650;         /* 少し軽めの太さで柔らかく */
-  line-height: 1.4;         /* 読みやすい行間 */
+  line-height: 1.45;         /* 読みやすい行間 */
   margin-bottom: 1em;
 }
 
-    @media (max-width: 768px) {
+@media (max-width: 768px) {
 #forms-attention p {
-  font-size: 1em;
-  line-height: 1.25;         /* 読みやすい行間 */
+  font-size: 0.9em;
+  line-height: 1.45;         /* 読みやすい行間 */
   margin-bottom: 1.2em;
 }
    }
@@ -523,9 +629,23 @@ button.submit-btn {
 
 /* 太字ハイライトコメント */
 #forms-attention .bold-text-forms {
+  position: relative;
   color: #7073ff;           /* 明るめの青 */
-  font-size: 1.25em;       
+  font-size: 1.35em;
   font-weight: 900;         /* 太め*/
+  padding: 0.1em 0.05em;    /* ハイライトと文字の余白 */
+}
+
+#forms-attention .bold-text-forms::before {
+  content: "";
+  position: absolute;
+  left: 0.3em;
+  right: 0.3em;
+  bottom: -0.1em;
+  height: 0.7em;
+  background: rgba(135, 225, 255, 0.8);
+  transform: skewX(-15deg);
+  z-index: -1;
 }
 
 
@@ -546,12 +666,19 @@ button.submit-btn {
   font-size: 0.9em;         /* 少し小さめの文字 */
   margin-top: -1em;        /* 上に少し余白 */
   font-weight: 600;         /* 少し軽めの太さで柔らかく */
-  line-height: 1.3;         /* 読みやすい行間 */
+  line-height: 1.4;         /* 読みやすい行間 */
 }
 
+/* 太字ハイライトコメント */
 #forms-attention .bold-text-forms {
-  font-size: 1.2em;
-  font-weight: 900;         /* 太め*/       
+  font-size: 1.3em;
+  font-weight: 900;         /* 太め*/
+  padding: 0.1em 0.05em;    /* ハイライトと文字の余白 */
+}
+
+#forms-attention .bold-text-forms::before {
+  bottom: -0.1em;
+  height: 0.6em;
 }
     }
 
@@ -591,7 +718,7 @@ button.submit-btn {
 #scr-banner .scrolling-banner {
   background-color: rgb(255, 255, 255);
   margin: 6em 0 6em 0;  
-  color: rgb(30, 60, 197);
+  color: rgb(46, 79, 228);
   width: 100%;
   padding: 0.3em 0;
   overflow: hidden;
@@ -636,7 +763,7 @@ button.submit-btn {
 
 .footer-dangos {
   position: absolute;
-  top: -200px; /* offset so dangos peek above the footer */
+  top: -120px; /* offset so dangos peek above the footer */
   left: 0;
   right: 0;
   pointer-events: none;
@@ -646,7 +773,7 @@ button.submit-btn {
 .footer-dangos img {
   position: absolute;
   top: 0;
-  width: 250px;
+  width: 180px;
   max-width: 30vw;
   --dango-rotation: 0deg;
   transform: rotate(var(--dango-rotation)) translateY(0);
@@ -660,37 +787,37 @@ button.submit-btn {
 
 @media (max-width: 768px) {
   .footer-dangos {
-    top: -110px;
+    top: -70px;
   }
   .footer-dangos img {
     top: 0;
-    width: 150px;
+    width: 100px;
 
   }
 }
 
 .footer-dangos .left-dango {
-  left: 400px;
+  left: 730px;
   top: -10px;
   animation-delay: 0s;
   --dango-rotation: 2deg;
 }
 
 .footer-dangos .right-dango {
-  right: 400px;
+  right: 730px;
   animation-delay: 0.5s;
   --dango-rotation: -2deg;
 }
 
 @media (max-width: 768px) {
 .footer-dangos .left-dango {
-  left: 80px;
+  left: 130px;
   top: -5px;
   animation-delay: 0s;
   --dango-rotation: 2deg;
 }
 .footer-dangos .right-dango {
-  right: 80px;
+  right: 130px;
   animation-delay: 0.5s;
   --dango-rotation: -2deg;
 }
@@ -711,11 +838,17 @@ button.submit-btn {
   right: 0;
   pointer-events: none;
   z-index: -1;
+  opacity: 0;
+  transform: translateY(80px);
+}
+
+.forms-dangos.slide-in {
+  animation: dangosSlideUp 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 .forms-dangos img {
   position: absolute;
-  width: 200px;
+  width: 180px;
   max-width: 30vw;
   --dango-rotation: 0deg;
   transform: rotate(var(--dango-rotation)) translateY(0);
@@ -734,16 +867,16 @@ button.submit-btn {
 }
 
 .forms-dangos .left-dango {
-  left: 20px;
+  left: 55px;
   top: -60px;
   animation-delay: 0s;
   --dango-rotation: 2deg;
-  width: 220px;
+  width: 210px;
 }
 
 .forms-dangos .right-dango {
-  top: -40px;
-  right: 20px;
+  top: -28px;
+  right: 60px;
   animation-delay: 0.5s;
   --dango-rotation: -2deg;
 }
@@ -770,13 +903,28 @@ button.submit-btn {
      60%  { transform: rotate(var(--dango-rotation)) scale(1,1)      translateY(0); }
      75%  { transform: rotate(var(--dango-rotation)) scale(1.02,.98) translateY(2%); }
      90%  { transform: rotate(var(--dango-rotation)) scale(1,1)      translateY(0); }
-     100% { transform: rotate(var(--dango-rotation)) scale(1,1)      translateY(0); }
+      100% { transform: rotate(var(--dango-rotation)) scale(1,1)      translateY(0); }
       }
 
+@keyframes dangosSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(80px);
+  }
+  80% {
+    opacity: 1;
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 
 
 
- /*ページタイトル（ページメインタイトル）*/
+
+ /*Thanksページ　ページタイトル（ページメインタイトル）*/
 .thanks-page-title {
     display: flex;
     font-weight: 700;
@@ -807,7 +955,7 @@ button.submit-btn {
 }
 
 
-/* スクロールダウンの位置 */
+/* スクロールダウン演出 */
 .scrolldown {
   padding-top: 130px;
   position: relative;
@@ -826,7 +974,7 @@ button.submit-btn {
 @media (max-width: 768px) {
 .scrolldown {
   padding-top: 100px;
-  margin-bottom: 280px;
+  margin-bottom: 390px;
   margin-top: 1px;
 }
 .scrolldown span {
@@ -877,7 +1025,7 @@ button.submit-btn {
 }
 
 
-/* ----- Page loader spinner ----- */
+/* ----- ページローダー　アイコン ----- */
 #page-loader {
   position: fixed;
   inset: 0;
@@ -975,7 +1123,7 @@ button.submit-btn {
   }
 }
 
-/* ----- Page loader text ----- */
+/* ----- ページローダー　テキスト ----- */
 .loader-text {
   margin-top: 1.2em;
   color: #fff;
@@ -984,6 +1132,18 @@ button.submit-btn {
   font-family: 'DotGothic16', 'Zen Maru Gothic',
     'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN', 'Meiryo', sans-serif;
 }
+
+.loader-run {
+  margin-top: 2em;
+  max-width: 300px;
+}
+
+@media (max-width: 768px) {
+.loader-run {
+  margin-top: 2em;
+  max-width: 190px;
+}
+    }
 
 .loader-text span {
   display: inline-block;
@@ -1012,4 +1172,52 @@ button.submit-btn {
   50% {
     transform: translateY(-8px);
   }
-    }
+}
+
+@keyframes popZoom {
+  0% {
+    transform: translateX(-50%) scale(0.8);
+    opacity: 0;
+  }
+  60% {
+    transform: translateX(-50%) scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-50%) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes charaPoyon {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes float1 {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes float2 {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(14px);
+  }
+}
