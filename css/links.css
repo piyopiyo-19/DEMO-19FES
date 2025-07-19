@@ -1,0 +1,184 @@
+
+
+
+.link-panels {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-top: 1em;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.link-panel {
+  text-decoration: none;
+  color: inherit;
+  background: #e8f4fd4b;
+  border: 2px solid #86a6ff79;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, box-shadow 0.2s;
+
+}
+
+.link-panel img {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+/* note埋め込み用iframeのサイズ調整 */
+.link-panel iframe {
+  width: 100%;
+  border: none;
+}
+
+.link-panel .panel-title {
+  font-size: 14px;
+  text-align: center;
+  font-weight: 800;
+}
+
+/* small category label */
+.link-panel .panel-type {
+  display: inline-block;
+  background-color: rgb(99, 127, 248);
+  color: #fff;
+  font-weight: 700;
+  font-size: 10px;
+  padding: 0 0.4em;
+  margin-bottom: 0.5em;
+  border-radius: 0;
+}
+
+.link-panel .panel-source {
+  font-size: 12px;
+  text-align: center;
+  color: #4c5df7;
+}
+
+.link-panel:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 8px rgba(3, 0, 190, 0.342);
+}
+
+.link-panel.note-panel .panel-title,
+.link-panel.note-panel .panel-note,
+.link-panel.note-panel .panel-source {
+  text-align: center;
+}
+
+
+@media (max-width: 768px) {
+
+  /* スマホ表示では1列に並べサムネイルを左、テキストを右に配置 */
+  .link-panels {
+    grid-template-columns: 1fr;
+  }
+
+  .link-panel {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 0.2rem;
+    margin-top: 0.2rem;
+  }
+
+
+
+
+
+  .link-panel img,
+  .link-panel iframe {
+    width: 100%;
+    max-width: none;
+    height: 180px;
+    margin: 0.25rem 0;
+    overflow: hidden;
+  }
+
+
+
+
+  .link-panel .panel-title,
+  .link-panel .panel-tit-sub,
+  .link-panel .panel-note,
+  .link-panel .panel-source {
+    text-align: left;
+  }
+
+  .link-panel .panel-title {
+    font-size: 16px;
+    line-height: 1.25;     /* adjust to desired tightness */
+    margin-bottom: 1.2rem;
+    display: block;
+  }
+
+
+
+  .link-panel .panel-note {
+    font-size: 14px;
+    margin-top: 0.7rem;
+
+  }
+
+  .link-panel .panel-source {
+    font-size: 12px;
+
+  }
+
+  .link-panel.note-panel {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .link-panel.note-panel img,
+  .link-panel.note-panel iframe {
+    width: 100% !important;
+    max-width: none;
+    margin-right: 0;
+    height: 180px;
+    overflow: hidden;
+  }
+
+
+    .link-panel .panel-text {/* パネル説明 */
+    padding: 1rem 1.5rem;
+  }
+
+  .link-panel.note-panel .panel-text {/* パネル説明 */
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .link-panel .panel-type {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 12px;
+  padding: 0.2em 0.8em;
+  margin-bottom: 0.5em;
+  border-radius: 0;
+  margin-left: -0.3rem;
+}
+
+  .link-panel.note-panel .panel-title,
+  .link-panel.note-panel .panel-note,
+  .link-panel.note-panel .panel-type,
+  .link-panel.note-panel .panel-source {
+    text-align: left;
+  }
+
+
+}
+
+
+
+
+@media (max-width: 480px) {
+  .link-panels {
+    grid-template-columns: 1fr;
+  }
+}
+

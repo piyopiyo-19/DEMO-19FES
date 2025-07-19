@@ -1,0 +1,284 @@
+
+
+    .fade-up {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .fade-up.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .section {
+      padding: 15px 20px 15px 20px;
+    }
+
+/* ✅ スマホ表示時に余白を小さくする */
+@media (max-width: 768px) {
+  .section {
+    padding: 20px 0;
+  }
+    }
+
+
+
+
+#image-guidelines.li-white-box-tx,
+#classification .li-white-box-tx,
+#post-guidelines .li-white-box-tx {
+  margin-bottom: 2.5rem;
+}
+
+#classification .li-white-box-tx p,
+#post-guidelines .li-white-box-tx h4,
+#post-guidelines .li-white-box-tx p {
+ margin-left: 1rem;
+}
+
+#post-guidelines .ribbon-title {
+ font-size: 1.2rem;
+ padding: 0.6em 0.5em;
+}
+
+
+
+/* ------------------------
+ * スマホ表示セクションナビ
+ * ------------------------*/
+@media (max-width: 768px) {
+  .grad-nav-double a {
+    height: 3.5em;
+    justify-content: flex-end;
+  }
+
+    .section-nav .grad-nav-double a {
+    font-size: 0.85rem; 
+    line-height: 1.3;
+}
+}
+
+
+
+
+
+
+
+/*アコーディオン*/
+.accordion-00g {
+  max-width: 700px;
+  background-color: hsl(210, 100%, 100%);
+  border: 1px solid rgba(155, 171, 241, 0.808);
+}
+
+.accordion-00g[open] {
+  padding-bottom: 1em;
+
+}
+
+.accordion-00g:not([open]) {
+  margin-bottom: 7px;
+}
+
+.accordion-00g summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 1em 2em;
+
+  background-color: rgb(56, 88, 230);
+  color: #ffffff;
+  font-weight: 900;
+
+  cursor: pointer;
+}
+
+.accordion-00g summary::-webkit-details-marker {
+  display: none;
+}
+
+.accordion-00g summary::before,
+.accordion-00g summary::after {
+  position: absolute;
+  right: 2em;
+  top: 50%;
+  width: 3px;
+  height: .9em;
+
+  background-color: #ffffff;
+  content: '';
+  transform: translateY(-50%);
+  transition: transform .3s, opacity .3s;
+}
+
+
+/* horizontal bar */
+.accordion-00g summary::after {
+  transform: translateY(-50%) rotate(90deg);
+}
+
+/* open state -> minus symbol */
+.accordion-00g[open] summary::before {
+  opacity: 0;
+}
+
+.accordion-00g[open] summary::after {
+  transform: translateY(-50%);
+}
+
+
+
+.accordion-00g summary::after {
+  transition: transform .3s;
+}
+
+.accordion-00g[open] summary::after {
+  transform: translateY(-50%) rotate(90deg);
+}
+
+.accordion-00g p {
+  transform: translateY(-10px);
+  opacity: 0;
+  margin: 0;
+  padding: 1em 2em 0.5em 2em;
+  transition: transform .5s, opacity .5s;
+  line-height: 1.7;
+}
+
+  .accordion-00g .accordion-content {
+    padding: 0.6em 0em;
+  }
+
+
+
+.accordion-00g[open] p {
+  transform: none;
+  opacity: 1;
+  font-size: 0.8rem;
+}
+
+@media (max-width: 768px) {
+.accordion-00g {
+padding: 1.2em auto;
+}
+
+
+  .accordion-00g,
+  .accordion-00g[open] {
+    width: 97%;
+    max-width: none;
+    margin: 1em auto;
+    padding: 0;
+
+  }
+
+  .accordion-00g summary {
+    padding: 0.9em 2em;
+    font-size: 1rem;
+    text-align: center;
+
+  }
+
+
+  .accordion-00g .accordion-content {
+    padding: 1em 2rem 0.8em 0.5rem;
+    font-size: 0.9rem;
+    
+  }
+
+  .accordion-00g p {
+    margin: 0.2em 0 0 0;
+    line-height: 1.6;
+  }
+
+}
+
+
+/* 白背景のボックスで囲むスタイル */
+.li-white-box {
+  background: #ffffffc2;
+  padding: 2rem 3rem;
+  margin: 0 auto;
+  margin-bottom: 2em;
+  max-width: 1000px;
+}
+
+.li-white-box-tx {
+  line-height: 1.1;
+  
+}
+
+.li-white-box-tx p {
+  margin-top: 0;        /* 段落の上余白 */
+  margin-bottom: 1em;   /* 段落の下余白 */
+  font-size: 1rem;
+}
+  .li-white-box li {
+  margin-bottom: 0.1rem;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+
+@media (max-width: 768px) {
+.li-white-box {
+    padding:  0.8rem 2rem 0.8rem 1.5rem;
+    margin-bottom: 1.5em;
+  }
+  .li-white-box-tx {
+  line-height: 1.45;
+font-weight: 500;
+}
+
+.li-white-box-tx p {
+  margin-top: 0;        /* 段落の上余白 */
+  margin-bottom: 1rem;   /* 段落の下余白 */
+  font-size: 0.94rem;
+}
+
+  .li-white-box li {
+  margin-bottom: 0.7rem;
+  font-size: 1rem;
+  line-height: 1.45;
+}
+}
+
+
+
+
+/*左線　見出し*/
+#classification .heading-leftline {
+  padding: 0.25em 0.4em;
+  border-left: 6px solid #76c0f1e7;
+  margin-top: 1.5em;
+  margin-left: 0.5rem;
+}
+@media (max-width: 768px) {
+#classification .li-white-box-tx {
+  margin-bottom: 4.2rem;
+}
+#Other-guidelines .li-white-box-tx {
+  margin-bottom: 4.2rem;
+}
+#image-guidelines .li-white-box-tx {
+  margin-bottom: 4rem;
+}
+#image-guidelines .p-note {
+  margin-left: 2rem;
+}
+
+}
+
+
+
+ .li-white-box-tx img {
+  margin: 0.5rem;
+}
+
+
+@media (max-width: 768px) {
+ .li-white-box-tx img {
+  margin: 1.2rem 0.6rem;
+}
+    }
+

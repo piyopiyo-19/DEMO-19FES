@@ -1,0 +1,114 @@
+#floating-particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.particle {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  opacity: 0;
+  background-size: contain;
+  background-repeat: no-repeat;
+  --rotate-base: 0deg;
+  transform: translate(0, 0) rotate(var(--rotate-base));
+  animation: fadeInParticle 1.2s ease-out forwards, floatParticle linear infinite;
+  will-change: transform;
+  z-index: 1;
+}
+
+.particle.eig-note2 {
+  background-image: url("../images/p-eig-note2.png");
+  width: 70px;
+}
+
+.particle.bsk-ball {
+  background-image: url("../images/p-bsk-ball.png");
+  width: 85px;
+}
+
+.particle.soccer-ball {
+  background-image: url("../images/p-soccer-ball.png");
+  width: 70px;
+}
+
+.particle.shoes {
+  background-image: url("../images/p-shoes.png");
+  width: 80px;
+}
+
+.particle.hand {
+  background-image: url("../images/p-hnd.png");
+  width: 90px;
+}
+
+.particle.g-clef {
+  background-image: url("../images/p-g-clef.png");
+  width: 80px;
+}
+
+.particle.p-ina-g {
+  background-image: url("../images/p-ina-g.png");
+  width: 80px;
+}
+
+.particle.piano {
+  background-image: url("../images/p-piano.png");
+  width: 85px;
+}
+
+.particle.eig-note1 {
+  background-image: url("../images/p-eig-note1.png");
+  width: 80px;
+}
+
+.particle.p-ina-b {
+  background-image: url("../images/p-ina-b.png");
+  width: 80px;
+}
+
+@media (max-width: 768px) {
+  .particle {
+    width: 50px;
+  }
+
+  .particle.eig-note2,
+  .particle.bsk-ball,
+  .particle.soccer-ball,
+  .particle.p-ina-g,
+  .particle.p-ina-b,
+  .particle.eig-note1,
+  .particle.piano {
+    width: 50px;
+  }
+
+  .particle.hand,
+  .particle.shoes {
+    width: 60px;
+  }
+}
+
+@keyframes floatParticle {
+  0% {
+    transform: translate(0, 0) rotate(var(--rotate-base));
+  }
+
+  100% {
+    transform: translate(60vw, -120vh) rotate(calc(var(--rotate-base) + 360deg));
+  }
+}
+
+@keyframes fadeInParticle {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 0.9;
+  }
+}

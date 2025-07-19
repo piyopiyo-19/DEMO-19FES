@@ -1,0 +1,1202 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800;900&family=DotGothic16&display=swap');
+
+/* -----------------------------------------------------------------------------
+ * ★共通のcss★
+ * -----------------------------------------------------------------------------*/
+
+/* 背景パターン */
+.bg_pattern {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(66, 101, 255);
+  z-index: -2;
+}
+
+/* song_formsページ用: 下部に白い余白を追加するため
+   背景全体を青にしつつ、ページ末尾に白いブロックを設置 */
+#songforms .bg_pattern {
+  top: 0;
+  height: 100vh;
+}
+
+/* フッター直前の白い余白エリア */
+#songforms .bottom-white-gap {
+  height: 50px;
+  background: #fff;
+  flex-shrink: 0;
+}
+
+
+/* ダミーページ用背景パターン */
+.bg_pattern-in {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(255, 255, 255);
+  z-index: -2;
+}
+
+#songforms .bg_pattern-in {
+  top: 0;
+  height: 100vh;
+}
+
+#songforms .bottom-white-gap {
+  height: 50px;
+  background: #fff;
+  flex-shrink: 0;
+}
+
+
+/* Thanksページ用 */
+#thanks .bg_pattern-in {
+  top: 0;
+  height: 100vh;
+}
+
+/* Thanksページ用の白い余白 */
+#thanks .bottom-white-gap {
+  height: 50px;
+  background: #fff;
+  flex-shrink: 0;
+}
+
+
+
+@media (max-width: 768px) {
+  #songforms .bottom-white-gap {
+    height: 40px;
+  }
+
+  #thanks .bottom-white-gap {
+    height: 40px;
+  }
+}
+
+
+.Paper_v2 {
+  background-image:
+    repeating-linear-gradient(to bottom,
+      transparent 25px,
+      rgba(0, 0, 0, 0.04) 26px, rgba(0, 0, 0, 0.04) 26px,
+      transparent 27px, transparent 51px,
+      rgba(0, 0, 0, 0.04) 52px, rgba(0, 0, 0, 0.04) 52px,
+      transparent 53px, transparent 77px,
+      rgba(0, 0, 0, 0.04) 78px, rgba(0, 0, 0, 0.04) 78px,
+      transparent 79px, transparent 103px,
+      rgba(0, 0, 0, 0.04) 104px, rgba(0, 0, 0, 0.04) 104px,
+      transparent 105px, transparent 129px,
+      rgba(0, 0, 0, 0.04) 130px, rgba(0, 0, 0, 0.04) 130px),
+
+    repeating-linear-gradient(to right,
+      transparent 25px,
+      rgba(0, 0, 0, 0.04) 26px, rgba(0, 0, 0, 0.04) 26px,
+      transparent 27px, transparent 51px,
+      rgba(0, 0, 0, 0.04) 52px, rgba(0, 0, 0, 0.04) 52px,
+      transparent 53px, transparent 77px,
+      rgba(0, 0, 0, 0.04) 78px, rgba(0, 0, 0, 0.04) 78px,
+      transparent 79px, transparent 103px,
+      rgba(0, 0, 0, 0.04) 104px, rgba(0, 0, 0, 0.04) 104px,
+      transparent 105px, transparent 129px,
+      rgba(0, 0, 0, 0.04) 130px, rgba(0, 0, 0, 0.04) 130px);
+}
+
+
+
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  letter-spacing: .025em;
+  line-height: 1.8;
+  color: #434472;
+  font-weight: 520;
+}
+
+body {
+  font-family:
+    "Noto Sans JP",
+    "Zen Maru Gothic",
+    "Hiragino Kaku Gothic ProN",
+    "ヒラギノ角ゴ ProN",
+    "Meiryo",
+    sans-serif;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.section {
+  padding: 50px 20px
+}
+
+#top.section {
+  padding-top: 10px;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+.site-footer,
+.footer-mobile {
+  margin-top: auto;
+}
+
+
+@media (min-width: 769px) {
+  body {
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  p,
+  li {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+}
+
+
+/* --------見出し制御---------*/
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.75rem;
+}
+
+h3 {
+  font-size: 1rem;
+}
+
+h4 {
+  font-size: 0.8rem;
+}
+
+h5 {
+  font-size: 0.75rem;
+}
+
+h6 {
+  font-size: 0.875rem;
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .section {
+    padding: 60px 15px;
+  }
+
+
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 0.95rem;
+  }
+
+  h4 {
+    font-size: 0.8rem;
+  }
+
+  h5 {
+    font-size: 0.75rem;
+  }
+
+  h6 {
+    font-size: 0.65rem;
+  }
+
+}
+
+
+
+
+
+
+/* -----------------------------------------------------------------------------
+ * ★以下、songform固有のcss★
+ * -----------------------------------------------------------------------------*/
+
+.fade-up.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* フォームのズーム演出 */
+#formbox-Container[data-aos-f] {
+  transform: scale(0.9);
+  transition: opacity 0.2s ease-out, transform 0.2s ease-out;
+}
+
+#formbox-Container[data-aos-f].aos-animate {
+  transform: scale(1);
+}
+
+.section {
+  padding: 15px 20px 15px 20px;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 5px 20px 5px 20px;
+  }
+}
+
+/* 入力テキストボックス*/
+textarea {
+  min-height: 180px;  /* テキストボックス高さ */
+  resize: vertical; /* ユーザーが縦にリサイズできる*/
+}
+
+textarea::placeholder {
+  color: #b2b8ee;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+
+/* info 白いボックス*/
+.f-info-white-box {
+  width: 100vw;
+  max-width: none;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  box-sizing: border-box;
+  position: relative;
+  background-color: #ffffff;
+  border-left: none;
+  border-right: none;
+  padding: 7em 0.8em 1em 0.8em;
+  margin-bottom: 1.5em;
+}
+
+/* infoボックス　ズームインアニメーション制御 */
+#forms-information {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: transform 0.3s ease-out, opacity 0.35s ease-out;
+}
+
+#forms-information.zoom-in {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* 上部に配置するinfo　タイトル画像 */
+.f-info-white-box .forms-info-img {
+  position: absolute;
+  top: -0.8em;
+  left: 50%;
+  transform: translateX(-50%) scale(0.8);
+  width: 100%;
+  max-width: 650px;
+  height: auto;
+  pointer-events: none;
+  opacity: 0;
+  transition: popZoom 0.3s ease-out, opacity 0.3s ease-out forwards;
+}
+
+.f-info-white-box .forms-info-img.pop {
+  animation: popZoom 0.3s ease-out forwards;
+}
+
+/* info　本文のアニメーション */
+.forms-info-text {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.25s ease-out;
+}
+
+.forms-info-text.zoom-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .f-info-white-box {
+    padding: 6em 0.5em 3em 0.5em;
+    margin-bottom: 1.5em;
+  }
+
+  .f-info-white-box .forms-info-img {
+    top: -0.8em;
+    width: 100%;
+    max-width: 400px;
+  }
+}
+
+/* クルヒ画像　左右に配置 */
+.f-info-white-box .info-chara {
+  position: absolute;
+  width: 265px;
+  max-width: 35vw;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+.f-info-white-box .info-chara.left {
+  left: calc((100vw - 960px) / 2 - 50px);
+  width: 262px;
+  bottom: -6em;
+}
+
+.f-info-white-box .info-chara.right {
+  right: calc((100vw - 960px) / 2 - 40px);
+  bottom: -7.5em;
+}
+
+
+.f-info-white-box .info-chara.poyon {
+  animation: charaPoyon 0.4s ease-out forwards,
+    float1 3s ease-in-out 0.4s infinite;
+}
+
+.f-info-white-box .info-chara.right.poyon {
+  animation: charaPoyon 0.4s ease-out forwards,
+    float2 3s ease-in-out 0.4s infinite;
+}
+
+
+@media (max-width: 768px) {
+  .f-info-white-box .info-chara {
+    width: 130px;
+  }
+
+  .f-info-white-box .info-chara.left {
+    left: 15px;
+    bottom: -7em;
+    width: 150px;
+  }
+
+  .f-info-white-box .info-chara.right {
+    right: 15px;
+    bottom: -7.9em;
+    width: 154px;
+  }
+}
+
+
+/* 入力フォーム box*/
+.formsbox {
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 25px 3em 2.5em 3em;
+  max-width: 700px;
+  margin: 0 auto;
+  margin-top: 7em;
+  box-sizing: border-box;
+  position: relative;
+  font-size: 1em;
+}
+
+
+/* 入力フォーム 募集終了後*/
+.formsbox.closed {
+  margin-top: 5em;
+  margin-bottom: 5em;
+}
+
+
+
+/* 入力フォーム タイトル画像 */
+.form-title {
+  text-align: center;
+  margin-bottom: 0.5em;
+  opacity: 0;
+}
+
+.form-title.zoom-in {
+  animation: formTitleZoom 0.2s ease-out forwards;
+}
+
+/* フォームタイトルテキスト画像（アンケートフォーム） */
+.form-title-img {
+  display: block;
+  width: calc(100% + 6em - 10px);
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@keyframes formTitleZoom {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  .formsbox {
+    padding: 12px 2.5em 2em 2.5em;
+    border-radius: 16px;
+    font-size: 16px;
+    margin-top: 1em;
+
+  }
+
+  /* 入力フォーム 募集終了後*/
+.formsbox.closed {
+  margin-top: 6.5em;
+  margin-bottom: 5em;
+}
+
+  .form-title-img {
+    display: block;
+    width: calc(100% + 5em - 10px);
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  /* iOS Safari ズーム制御 */
+  .form-group input,
+  .form-group textarea {
+    font-size: 16px;
+  }
+
+  .form-group input::placeholder {
+    font-size: 16px;
+  }
+
+  textarea::placeholder {
+    font-size: 16px;
+    line-height: 1.4;
+  }
+}
+
+
+/* ------------------------------
+ * アンケートフォーム　入力部　制御
+ * ------------------------------*/
+.form-group {
+  margin-bottom: 1.5em;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: bold;
+  margin-bottom: 0.4em;
+}
+
+.form-group .required-badge {
+  display: inline-block;
+  margin-left: 0.5em;
+  padding: 0 0.3em;
+  font-size: 0.7em;
+  background-color: #4f6ffd;
+  color: #ffffff;
+  border-radius: 2px;
+}
+
+.form-group input,
+.form-group textarea {
+  color: #555c96;
+  padding: 0.6em;
+  font-size: 1em;
+  border: 1px solid #5386e4;
+  border-radius: 6px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, background-size 0.3s ease;
+  background-image: linear-gradient(#6bec80, #6bec80),
+    linear-gradient(#5386e4, #5386e4);
+  background-size: 0 1px, 100% 1px;
+  background-position: 0 100%, 0 100%;
+  background-repeat: no-repeat;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #6bec80;
+  outline: none;
+  background-size: 100% 2px, 100% 2px;
+}
+
+
+
+
+/* 入力フォーム送信ボタン */
+button.submit-btn {
+  background-color: rgb(81 109 235);
+  color: white;
+  border: none;
+  padding: 0.8em 2em;
+  border-radius: 2rem;
+  font-size: 1.1em;
+  font-weight: bold;
+  font-family: 'Noto Sans JP',
+    'Zen Maru Gothic',
+    'Hiragino Kaku Gothic ProN',
+    'ヒラギノ角ゴ ProN',
+    'Meiryo',
+    sans-serif;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.2s ease;
+  max-width: 400px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 3rem;
+  margin-bottom: 0.1rem;
+}
+
+@keyframes wiggle-medium {
+
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+
+  20% {
+    transform: rotate(4deg);
+  }
+
+  40% {
+    transform: rotate(-4deg);
+  }
+
+  60% {
+    transform: rotate(3deg);
+  }
+
+  80% {
+    transform: rotate(-3deg);
+  }
+}
+
+button.submit-btn {
+  transition: background-color 0.3s ease;
+}
+
+/* ホバーでぷるん（PCのみ） */
+@media (min-width: 769px) {
+  button.submit-btn:hover {
+    background-color: #46f790;
+    animation: wiggle-medium 0.4s ease-in-out;
+  }
+}
+
+/* スマホではアニメーション無効化 */
+@media (max-width: 768px) {
+  button.submit-btn:hover {
+    background-color: rgb(81, 109, 235) !important;
+    /* ホバー時も青のまま */
+    animation: none !important;
+  }
+}
+
+
+
+/* ------------------------------
+ * メインタイトル画像（ヘッダー）　表示制御
+ * ------------------------------*/
+#songforms main {
+  padding: 0;
+}
+
+#songforms #page-title {
+  margin: -20px 13em 2em 13em;
+  padding: 0;
+}
+
+#songforms #page-title .container-center {
+  max-width: 100%;
+  padding: 0;
+}
+
+#songforms #page-title img {
+  width: 100%;
+  display: block;
+}
+
+
+/* ----PC表示------*/
+@media (min-width: 769px) {　
+  #songforms #page-title img {
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* ----スマホ表示------*/
+@media (max-width: 768px) {
+  #songforms #page-title {
+    margin: -12px 10px 1.5em 10px;
+  }
+}
+
+/* ------------------------------
+ * info　テキスト制御
+ * ------------------------------*/
+#forms-information p {
+  font-size: 1.2em;
+  font-weight: 650;
+  line-height: 1.45;
+  margin-bottom: 1em;
+}
+
+@media (max-width: 768px) {
+  #forms-information p {
+    font-size: 0.9em;
+    line-height: 1.45;
+    margin-bottom: 1.2em;
+  }
+}
+
+/* 太字ハイライトコメント */
+#forms-information .bold-text-forms {
+  position: relative;
+  color: #7073ff;
+  font-size: 1.35em;
+  font-weight: 900;
+  padding: 0.1em 0.05em;
+}
+
+#forms-information .bold-text-forms::before {
+  content: "";
+  position: absolute;
+  left: 0.3em;
+  right: 0.3em;
+  bottom: -0.1em;
+  height: 0.7em;
+  background: rgba(135, 225, 255, 0.8);
+  transform: skewX(-15deg);
+  z-index: -1;
+}
+
+
+@media (max-width: 768px) {
+  #forms-information .bold-text-forms {
+    font-size: 1.3em;
+    font-weight: 900;
+    padding: 0.1em 0.05em;
+  }
+
+  #forms-information .bold-text-forms::before {
+    bottom: -0.1em;
+    height: 0.6em;
+  }
+}
+
+#songforms #forms-information {
+  font-family: 'Noto Sans JP',
+    'Zen Maru Gothic',
+    'Hiragino Kaku Gothic ProN',
+    'ヒラギノ角ゴ ProN',
+    'Meiryo',
+    sans-serif;
+}
+
+/* スマホでボックスが幅いっぱいに広がるようにする */
+@media (max-width: 768px) {
+  #forms-information .container-center {
+    padding-left: 0;
+    padding-right: 0;
+    max-width: none;
+    width: 100%;
+  }
+}
+
+
+
+/* ----------------------------------------
+ * スクロールバナー
+ * ----------------------------------------*/
+
+/* 両端の余白を取り除き横幅いっぱいに広がるようにする */
+#scr-banner.section {
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  width: 100vw;
+}
+
+/* バナー本体 */
+#scr-banner .scrolling-banner {
+  background-color: rgb(255, 255, 255);
+  margin: 6em 0 6em 0;
+  color: rgb(46, 79, 228);
+  width: 100%;
+  padding: 0.3em 0;
+  overflow: hidden;
+  font-weight: 700;
+  font-family: 'DotGothic16', 'Zen Maru Gothic',
+    'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN', 'Meiryo', sans-serif;
+}
+
+@media (max-width: 768px) {
+  #scr-banner .scrolling-banner {
+    margin: 5em 0 5.5em 0;
+    padding: 0.4em 0;
+    font-size: 0.77em;
+  }
+}
+
+#scr-banner .scrolling-banner .scrolling-text {
+  display: inline-block;
+  white-space: nowrap;
+  animation: banner-scroll 20s linear infinite;
+}
+
+#scr-banner .scrolling-banner .scrolling-text span {
+  padding: 0.8em 1rem;
+}
+
+@keyframes banner-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+
+
+/* ----------------------------------------
+ * 宗拓ぽよん　アニメーション
+ * ----------------------------------------*/
+#footer-placeholder {
+  position: relative;
+}
+
+.footer-dangos {
+  position: absolute;
+  top: -120px;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.footer-dangos img {
+  position: absolute;
+  top: 0;
+  width: 180px;
+  max-width: 30vw;
+  --dango-rotation: 0deg;
+  transform: rotate(var(--dango-rotation)) translateY(0);
+  animation: poyonBounce 1.2s ease-in-out infinite;
+  animation-play-state: paused;
+}
+
+.footer-dangos.animate img {
+  animation-play-state: running;
+}
+
+@media (max-width: 768px) {
+  .footer-dangos {
+    top: -70px;
+  }
+
+  .footer-dangos img {
+    top: 0;
+    width: 100px;
+
+  }
+}
+
+.footer-dangos .left-poyoyo {
+  left: 730px;
+  top: -10px;
+  animation-delay: 0s;
+  --dango-rotation: 2deg;
+}
+
+.footer-dangos .right-poyoyo {
+  right: 730px;
+  animation-delay: 0.5s;
+  --dango-rotation: -2deg;
+}
+
+@media (max-width: 768px) {
+  .footer-dangos .left-poyoyo {
+    left: 130px;
+    top: -5px;
+    animation-delay: 0s;
+    --dango-rotation: 2deg;
+  }
+
+  .footer-dangos .right-poyoyo {
+    right: 130px;
+    animation-delay: 0.5s;
+    --dango-rotation: -2deg;
+  }
+}
+
+
+/* ------------------------------
+ * フォーム宗拓ぽよん アニメーション
+ * ------------------------------*/
+.formsbox {
+  position: relative;
+}
+
+.forms-poyo {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0;
+  transform: translateY(80px);
+}
+
+.forms-poyo.slide-in {
+  animation: dangosSlideUp 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.forms-poyo img {
+  position: absolute;
+  width: 180px;
+  max-width: 30vw;
+  --dango-rotation: 0deg;
+  transform: rotate(var(--dango-rotation)) translateY(0);
+  animation: poyonBounce 1.2s ease-in-out infinite;
+  animation-play-state: paused;
+}
+
+.forms-poyo.animate img {
+  animation-play-state: running;
+}
+
+@media (max-width: 768px) {
+  .forms-poyo {
+    top: -60px;
+  }
+}
+
+.forms-poyo .left-poyoyo {
+  left: 55px;
+  top: -60px;
+  animation-delay: 0s;
+  --dango-rotation: 2deg;
+  width: 210px;
+}
+
+.forms-poyo .right-poyoyo {
+  top: -28px;
+  right: 60px;
+  animation-delay: 0.5s;
+  --dango-rotation: -2deg;
+}
+
+@media (max-width: 768px) {
+  .forms-poyo .left-poyoyo {
+    left: 30px;
+    top: -40px;
+    width: 135px;
+  }
+
+  .forms-poyo .right-poyoyo {
+    right: 30px;
+    top: -29px;
+    width: 125px;
+  }
+}
+
+
+@keyframes poyonBounce {
+  0% {
+    transform: rotate(var(--dango-rotation)) scale(.9, 1.05) translateY(0);
+  }
+
+  15% {
+    transform: rotate(var(--dango-rotation)) scale(1.1, .9) translateY(10%);
+  }
+
+  30% {
+    transform: rotate(var(--dango-rotation)) scale(1, 1) translateY(0);
+  }
+
+  45% {
+    transform: rotate(var(--dango-rotation)) scale(1.05, .95) translateY(5%);
+  }
+
+  60% {
+    transform: rotate(var(--dango-rotation)) scale(1, 1) translateY(0);
+  }
+
+  75% {
+    transform: rotate(var(--dango-rotation)) scale(1.02, .98) translateY(2%);
+  }
+
+  90% {
+    transform: rotate(var(--dango-rotation)) scale(1, 1) translateY(0);
+  }
+
+  100% {
+    transform: rotate(var(--dango-rotation)) scale(1, 1) translateY(0);
+  }
+}
+
+@keyframes dangosSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(80px);
+  }
+
+  80% {
+    opacity: 1;
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+
+
+/*Thanksページ　ページタイトル（ページメインタイトル）*/
+.thanks-page-title {
+  display: flex;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: .02em;
+  font-family: 'DotGothic16', 'Zen Maru Gothic',
+    'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN', 'Meiryo', sans-serif;
+  content: attr(data-label);
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+}
+
+.thanks-page-title::before,
+.thanks-page-title::after {
+  width: 3px;
+  height: 40px;
+  background-color: #ffffff;
+  content: '';
+}
+
+.thanks-page-title::before {
+  transform: rotate(-35deg);
+  margin-right: 30px;
+}
+
+.thanks-page-title::after {
+  transform: rotate(35deg);
+  margin-left: 30px;
+}
+
+
+/* ----------------------------------------
+ * スクロールダウン演出
+ * ----------------------------------------*/
+.scrolldown {
+  padding-top: 130px;
+  position: relative;
+  text-align: center;
+  margin-bottom: 300px;
+  margin-top: 1px;
+}
+
+/* 募集終了時 */
+.scrolldown.disabled {
+  display: none;
+}
+
+.scrolldown span {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+
+@media (max-width: 768px) {
+  .scrolldown {
+    padding-top: 100px;
+    margin-bottom: 390px;
+    margin-top: 1px;
+  }
+
+  .scrolldown span {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+}
+
+/* 矢印のアニメーション部分 */
+.scrolldown::before {
+  animation: scroll 1.8s infinite;
+  border-bottom: 3px solid #ffffff;
+  border-left: 3px solid #ffffff;
+  content: "";
+  height: 60px;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 60px;
+}
+
+@media (max-width: 768px) {
+  .scrolldown::before {
+    height: 40px;
+    width: 40px;
+  }
+}
+
+/* 矢印のアニメーション */
+@keyframes scroll {
+  0% {
+    opacity: 0;
+    transform: rotate(-45deg) translate(0, 0);
+  }
+
+  40% {
+    opacity: 1;
+  }
+
+  80% {
+    opacity: 0;
+    transform: rotate(-45deg) translate(-30px, 30px);
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+
+
+@keyframes popZoom {
+  0% {
+    transform: translateX(-50%) scale(0.8);
+    opacity: 0;
+  }
+
+  60% {
+    transform: translateX(-50%) scale(1.1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(-50%) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes charaPoyon {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+
+  60% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes float1 {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes float2 {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(14px);
+  }
+}
+
+.form-closed-message {
+  text-align: center;
+  color: #3d5aff;
+  margin: 2em 0;
+  font-weight: 800;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+.form-closed-message {
+  text-align: center;
+  font-size: 1rem;
+}
+}

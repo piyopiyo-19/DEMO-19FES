@@ -1,0 +1,41 @@
+.section {
+  padding: 15px 20px;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 20px 0;
+  }
+}
+.li-white-box {
+  background: #ffffffc2;
+  padding: 2rem 3rem;
+  margin: 0 auto 2em auto;
+  max-width: 1000px;
+}
+
+.li-white-box-tx p {
+  margin-top: 0;
+  margin-bottom: 1em;
+  font-size: 1rem;
+}
+
+.li-white-box li {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .li-white-box {
+    padding: 2rem 1.5rem;
+    margin-bottom: 1.5em;
+  }
+  .li-white-box-tx p {
+    font-size: 0.94rem;
+  }
+  .li-white-box li {
+    font-size: 0.94rem;
+    line-height: 1.45;
+  }
+}
