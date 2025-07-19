@@ -71,6 +71,14 @@ html {
   }
 }
 
+@media (orientation: portrait) and (min-width: 769px) {
+  .bg-fixed {
+        background-image: url("../images/bk-in-sm.png");
+    /* Ensure full width on tall displays */
+    background-size: 100% auto;
+  }
+}
+
 
 img {
   max-width: 100%;

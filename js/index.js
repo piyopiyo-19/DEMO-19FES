@@ -39,10 +39,11 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    function slideTo(index, smooth = true) {
-      if (!smooth) carousel.style.scrollBehavior = 'auto';
-      const width = getItemWidth();
-      carousel.scrollTo({ left: width * index, behavior: smooth ? 'smooth' : 'auto' });
+      function slideTo(index, smooth = true) {
+        if (!smooth) carousel.style.scrollBehavior = 'auto';
+        const width = getItemWidth();
+        const offset = (carousel.clientWidth - items[0].clientWidth) / 2;
+        carousel.scrollTo({ left: width * index - offset, behavior: smooth ? 'smooth' : 'auto' });
       currentIndex = index;
       updateDots((index - 1 + itemCount) % itemCount);
       updateActiveItem();
@@ -61,9 +62,10 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
-    carousel.addEventListener('scroll', () => {
-      const width = getItemWidth();
-      const index = Math.round(carousel.scrollLeft / width);
+      carousel.addEventListener('scroll', () => {
+        const width = getItemWidth();
+        const offset = (carousel.clientWidth - items[0].clientWidth) / 2;
+        const index = Math.round((carousel.scrollLeft + offset) / width);
       if (index !== currentIndex) {
         currentIndex = index;
         updateDots((currentIndex - 1 + itemCount) % itemCount);
